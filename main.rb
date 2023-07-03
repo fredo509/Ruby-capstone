@@ -13,6 +13,38 @@ class Main
       puts "#{index + 1}. #{option}"
     end
   end
+
+  def select_option(option)
+   
+    case option
+    when 1
+      puts 'future method 1'
+    when 2
+       puts 'future method 2'
+    when 3
+       puts 'future method 3'
+    when 4
+       puts 'future method 4'
+    when 5
+       puts 'future method 5'
+    when 6
+       puts 'future method 6'
+    when 7
+       puts 'future method 7'
+    when 8
+       puts 'future method 8'
+    when 9
+       puts 'future method 9'
+    when 10
+       puts 'future method 10'
+    when 11
+       puts 'future method 11'
+    when 12
+      puts 'future method 12'
+    when 13 
+      puts 'exit'
 end
 
+option = gets.chomp.to_i
 Main.new
+Main.select_option(option)
