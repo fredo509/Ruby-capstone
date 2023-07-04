@@ -163,6 +163,17 @@ You can deploy this project using:
 - Twitter: [@carreraprogrammer](https://twitter.com/carreraprog)
 - LinkedIn: [Daniel Carrera] (https://www.linkedin.com/in/daniel-carrera-paz-85a917244/)
 
+👤 **Fredo Fleur**
+
+- GitHub: [fredo509](https://github.com/fredo509)
+- Twitter: [@Fredo_st_fleur](https://twitter.com/Fredo_st_fleur?t=kXdEx7GqmngfCYId_vu8Tg&s=09)
+- LinkedIn: [fredo-st-fleur](https://www.linkedin.com/in/fredo-st-fleur)
+
+👤 **Salman Ahmad Khan**
+
+- GitHub: [@githubhandle](https://github.com/fpsapc)
+- Twitter: [@twitterhandle](https://twitter.com/fpsapc)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/salman-ahmad1987 )
 
 ## 🔭 Future Features <a name="future-features"></a>
 
