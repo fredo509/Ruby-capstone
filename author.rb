@@ -7,4 +7,13 @@ class Author
     @last_name = last_name
     @items = []
   end
+
+  def add_item(item)
+    if item.is_a?(Item)
+      @items << item
+      item.author = self
+    else
+      raise TypeError, 'Invalid type, must be an Item instance'
+    end
+  end
 end
