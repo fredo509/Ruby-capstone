@@ -22,18 +22,18 @@ RSpec.describe Author do
       expect(author.id).to eq(random_id)
     end
   end
-  
+
   describe '#add_item' do
     context 'When add item to author' do
       it 'should take an instance of the Item class as an input' do
         author.add_item(item)
         expect(author.items).to eq([item])
       end
-  
+
       it 'should raise an error if the input is not an instance of the Item class' do
         expect { author.add_item('item') }.to raise_error(TypeError)
       end
-  
+
       it 'should add self as a property of the item object' do
         author.add_item(item)
         expect(item.author).to eq(author)
