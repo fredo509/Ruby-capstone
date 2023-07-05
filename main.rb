@@ -1,5 +1,8 @@
+require_relative 'game_options'
+
 class Main
   def initialize
+    @game_options = GameOptions.new
     show_console_options
     option = get_user_input('Enter your choice: ').to_i
     select_option(option)
@@ -32,8 +35,7 @@ class Main
       sleep(1)
       Main.new
     when 4
-      puts 'future method 4'
-      sleep(1)
+      @game_options.list_games
       Main.new
     when 5
       puts 'future method 5'

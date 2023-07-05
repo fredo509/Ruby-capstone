@@ -1,7 +1,7 @@
 require_relative '../game'
 require_relative '../author'
 
-describe Game do
+RSpec.describe Game do
   let(:author) { Author.new('Shigeru', 'Miyamoto') }
   let(:game) { Game.new('The Legend of Zelda', false, '1986-02-21', '2020-02-02') }
 
