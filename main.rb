@@ -9,8 +9,6 @@ class Main
     @items = []
     @labels = []
     show_console_options
-    option = get_user_input('Enter your choice: ').to_i
-    select_option(option)
   end
 
   def show_console_options
@@ -23,6 +21,8 @@ class Main
     options_array.each_with_index do |option, index|
       puts "#{index + 1}. #{option}"
     end
+    option = get_user_input('Enter your choice: ').to_i
+    select_option(option)
   end
 
   def select_option(option)
@@ -31,53 +31,54 @@ class Main
       list_books = ListBooks.new
       list_books.list_books(@items)
       sleep(1)
-      Main.new
+      show_console_options
     when 2
       puts 'future method 2'
       sleep(1)
-      Main.new
+      show_console_options
     when 3
       puts 'future method 3'
       sleep(1)
-      Main.new
+      show_console_options
     when 4
       @game_options.list_games
-      Main.new
+      sleep(1)
+      show_console_options
     when 5
       puts 'future method 5'
       sleep(1)
-      Main.new
+      show_console_options
     when 6
       list_labels = ListLabels.new
       list_labels.list_labels(@labels)
       puts 'future method 6'
       sleep(1)
-      Main.new
+      show_console_options
     when 7
       puts 'future method 7'
       sleep(1)
-      Main.new
+      show_console_options
     when 8
       puts 'future method 8'
       sleep(1)
-      Main.new
+      show_console_options
     when 9
       add_book = AddBook.new
       add_book.make_item(self)
       sleep(1)
-      Main.new
+      show_console_options
     when 10
       puts 'future method 10'
       sleep(1)
-      Main.new
+      show_console_options
     when 11
       puts 'future method 11'
       sleep(1)
-      Main.new
+      show_console_options
     when 12
-      puts 'future method 12'
+      @game_options.add_game
       sleep(1)
-      Main.new
+      show_console_options
     when 13
       puts 'Exit'
     else
@@ -85,7 +86,7 @@ class Main
       puts "\nInvalid option, try again!"
       puts "\n-------------------------------------------"
       sleep(1)
-      Main.new
+      show_console_options
     end
   end
 
