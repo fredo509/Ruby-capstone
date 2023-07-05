@@ -9,11 +9,9 @@ class Author
   end
 
   def add_item(item)
-    if item.is_a?(Item)
-      @items << item
-      item.author = self
-    else
-      raise TypeError, 'Invalid type, must be an Item instance'
-    end
+    raise TypeError, 'Invalid type, must be an Item instance' unless item.is_a?(Item)
+
+    @items << item
+    item.author = self
   end
 end
