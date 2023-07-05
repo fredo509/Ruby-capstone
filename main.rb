@@ -1,8 +1,13 @@
 require_relative 'game_options'
+require_relative 'add_book'
 
 class Main
+  attr_accessor :items, :labels
+
   def initialize
     @game_options = GameOptions.new
+    @items = []
+    @labels = []
     show_console_options
     option = get_user_input('Enter your choice: ').to_i
     select_option(option)
@@ -23,7 +28,8 @@ class Main
   def select_option(option)
     case option
     when 1
-      puts 'future method 1'
+      list_books = ListBooks.new
+      list_books.list_books(@items)
       sleep(1)
       Main.new
     when 2
@@ -42,6 +48,8 @@ class Main
       sleep(1)
       Main.new
     when 6
+      list_labels = ListLabels.new
+      list_labels.list_labels(@labels)
       puts 'future method 6'
       sleep(1)
       Main.new
@@ -54,7 +62,8 @@ class Main
       sleep(1)
       Main.new
     when 9
-      puts 'future method 9'
+      add_book = AddBook.new
+      add_book.make_item(self)
       sleep(1)
       Main.new
     when 10
