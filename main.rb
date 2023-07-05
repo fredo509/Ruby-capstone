@@ -1,11 +1,11 @@
+require_relative 'game_options'
 require_relative 'add_book'
-require_relative 'list_books'
-require_relative 'list_labels'
 
 class Main
   attr_accessor :items, :labels
 
   def initialize
+    @game_options = GameOptions.new
     @items = []
     @labels = []
     show_console_options
@@ -41,8 +41,7 @@ class Main
       sleep(1)
       Main.new
     when 4
-      puts 'future method 4'
-      sleep(1)
+      @game_options.list_games
       Main.new
     when 5
       puts 'future method 5'
