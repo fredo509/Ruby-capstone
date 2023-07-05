@@ -1,8 +1,7 @@
 require 'date'
 
 class Item
-  attr_accessor :archived, :author
-  attr_reader :id, :genre, :source, :label, :publish_date
+  attr_accessor :archived, :label
 
   def initialize(genre, author, source, label, publish_date)
     @id = Random.rand(1...1000)
@@ -12,6 +11,7 @@ class Item
     @label = label
     @publish_date = Date.parse(publish_date)
     @archived = false
+    @label = nil
   end
 
   def can_be_archived?
@@ -19,10 +19,12 @@ class Item
   end
 
   def move_to_archive
-    @archived = if can_be_archived?
-                  true
-                else
-                  false
-                end
+    @archived = can_be_archived?
+  end
+
+  def add_label(label)
+    @label = label
   end
 end
+
+Item.new('fantasy', 'j.k. rowling', 'amazon', 'scholastic', '1990-06-26')
