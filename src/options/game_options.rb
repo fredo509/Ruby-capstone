@@ -1,4 +1,5 @@
-require_relative '../classes/game'
+require_relative "../classes/game"
+require_relative "author_options"
 
 class GameOptions
   attr_accessor :game_instances, :game_ruby_objects
@@ -20,43 +21,52 @@ class GameOptions
   end
 
   def list_games
-    puts '🚀 Listing games... 🎮'
-    sleep(0.5)
-    puts "\n======================================================================"
-    puts ''
 
+    puts "\n======================================================================"
+    puts "\n🚀 Listing games... 🎮"
+    puts ""
+    sleep(0.5)
     if @game_ruby_objects.empty?
-      puts 'No games found.'
+      puts "||                                                                  ||"
+      puts "||                         No games found 😿                        ||"
+      puts "||                                                                  ||"
+      puts "======================================================================"
     else
       @game_ruby_objects.each_with_index do |game, i|
-        puts "[#{i}] ID: #{game[:id]} - Name: #{game[:name]} - Multiplayer: #{game[:multiplayer]} -
-        Publish Date: #{game[:publish_date]} - Last Played At: #{game[:last_played_at]} - Archived: #{game[:archived]}"
+        puts "[#{i}] ID: #{game[:id]} - Name: #{game[:name]} - Multiplayer: #{game[:multiplayer]} - Publish Date: #{game[:publish_date]} - Last Played At: #{game[:last_played_at]} - Archived: #{game[:archived]}"
       end
     end
-
-    puts ''
+    puts "\n======================================================================"
+    puts ""
   end
 
-  def add_game
-    puts ''
-    puts '🚀 Adding a game... 🎮'
+  def add_game(author_options)
+    puts ""
+    puts "🚀 Adding a game... 🎮"
     sleep(0.5)
     puts "\n======================================================================"
-    puts ''
-    puts 'What is the name of the game?'
+    puts ""
+    puts "What is the name of the game?"
     game_name = gets.chomp
-    puts 'Is it multiplayer? (true/false)'
+    puts "Is it multiplayer? (true/false)"
     multiplayer = gets.chomp
-    puts 'What is the publish date? (YYYY-MM-DD)'
+    puts "What is the publish date? (YYYY-MM-DD)"
     publish_date = gets.chomp
-    puts 'What is the last played at? (YYYY-MM-DD)'
+    puts "What is the last played at? (YYYY-MM-DD)"
     last_played_at = gets.chomp
-    @game_ruby_objects.push(to_ruby_object(Game.new(game_name, multiplayer, publish_date, last_played_at)))
-    puts @game_ruby_objects
-    puts ''
-    puts 'Game added! 😼 🕹️ '
-    sleep(0.5)
+    new_game = Game.new(game_name, multiplayer, publish_date, last_played_at)
+    @game_ruby_objects.push(to_ruby_object(new_game))  
+    author_options.add_author(new_game)
+    sleep(0.3)
     puts "\n======================================================================"
-    puts ''
+    puts "||                                                                  ||"
+    puts "||                          😺 Author added! 📕                     ||"
+    sleep(0.3)
+    puts "||                          🕹️ Game was added! 😼                    ||"
+    puts "||                                                                  ||"
+    puts "======================================================================"
+    sleep(0.5)
+    puts ""
+
   end
 end

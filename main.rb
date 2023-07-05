@@ -1,11 +1,13 @@
 require_relative './src/options/game_options'
 require_relative './src/options/add_book'
+require_relative './src/options/author_options'
 
 class Main
   attr_accessor :items, :labels
 
   def initialize
     @game_options = GameOptions.new
+    @author_options = AuthorOptions.new
     @items = []
     @labels = []
     show_console_options
@@ -55,7 +57,7 @@ class Main
       sleep(1)
       show_console_options
     when 7
-      puts 'future method 7'
+      @author_options.list_authors
       sleep(1)
       show_console_options
     when 8
@@ -76,7 +78,7 @@ class Main
       sleep(1)
       show_console_options
     when 12
-      @game_options.add_game
+      @game_options.add_game(@author_options)
       sleep(1)
       show_console_options
     when 13
