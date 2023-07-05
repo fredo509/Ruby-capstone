@@ -1,4 +1,4 @@
-require_relative '../item'
+require_relative '../src/classes/item'
 
 describe Item do
   context 'When publish-date is more than 10 years' do

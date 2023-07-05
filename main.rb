@@ -1,5 +1,5 @@
-require_relative 'game_options'
-require_relative 'add_book'
+require_relative './src/options/game_options'
+require_relative './src/options/add_book'
 
 class Main
   attr_accessor :items, :labels

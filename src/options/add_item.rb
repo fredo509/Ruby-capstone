@@ -1,4 +1,4 @@
-require_relative 'label'
+require_relative '../classes/label'
 
 class AddItem
   def make_item(item_type)

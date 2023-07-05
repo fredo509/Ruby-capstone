@@ -1,4 +1,4 @@
-require_relative '../music_album'
+require_relative '../src/classes/music_album'
 
 describe Music do
   context 'when initialized' do

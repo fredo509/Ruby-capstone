@@ -1,5 +1,5 @@
-require_relative '../game'
-require_relative '../author'
+require_relative '../src/classes/game'
+require_relative '../src/classes/author'
 
 RSpec.describe Game do
   let(:author) { Author.new('Shigeru', 'Miyamoto') }

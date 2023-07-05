@@ -1,5 +1,5 @@
 require_relative 'add_item'
-require_relative 'book'
+require_relative '../classes/book'
 
 class AddBook < AddItem
   def make_item(app)

@@ -1,5 +1,5 @@
-require_relative '../author'
-require_relative '../item'
+require_relative '../src/classes/author'
+require_relative '../src/classes/item'
 
 RSpec.describe Author do
   let(:author) { Author.new('J.K', 'Rowling') }

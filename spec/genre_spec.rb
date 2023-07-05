@@ -1,6 +1,6 @@
 require 'rspec'
-require_relative '../genre'
-require_relative '../item'
+require_relative '../src/classes/genre'
+require_relative '../src/classes/item'
 
 describe Genre do
   context 'when initialized' do
