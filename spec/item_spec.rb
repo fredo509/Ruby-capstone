@@ -3,7 +3,7 @@ require_relative '../item'
 describe Item do
   context 'When publish-date is more than 10 years' do
     it 'move to archive should change archived to true' do
-      book = Item.new('fantasy', 'j.k. rowling', 'amazon', 'scholastic', '1993-06-26')
+      book = Item.new('1993-06-26')
       book.move_to_archive
       expect(book.archived).to eq(true)
     end
@@ -11,7 +11,7 @@ describe Item do
 
   context 'When publish-date is less than 10 years' do
     it 'move to archive should change archived to false' do
-      book2 = Item.new('fantasy', 'j.k. rowling', 'amazon', 'scholastic', '2019-06-26')
+      book2 = Item.new('2019-06-26')
       book2.move_to_archive
       expect(book2.archived).to eq(false)
     end
