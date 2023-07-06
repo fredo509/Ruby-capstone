@@ -12,7 +12,7 @@ class AuthorOptions
     return unless author_ruby_objects.empty?
 
     @author_ruby_objects.each do |author|
-      author_instance = Author.new(author[:first_name], author[:last_name])
+      author_instance = Author.new(author["first_name"], author["last_name"])
       author_instances_list.push(author_instance)
     end
   end
@@ -54,12 +54,12 @@ class AuthorOptions
     puts "\nPlease, select an author 📖: "
     puts ''
     @author_ruby_objects.each_with_index do |author, index|
-      puts "[#{index + 1}] #{author[:first_name]} #{author[:last_name]}"
+      puts "[#{index + 1}] #{author["first_name"]} #{author["last_name"]}"
     end
     puts ''
     print 'Please, choose author by number: '
     author_index = gets.chomp.to_i
-    author = @authors_instances_list[author_index - 1]
+    author = Author.new(@author_ruby_objects[author_index - 1]['first_name'], @author_ruby_objects[author_index - 1]['last_name'])
     author.add_item(item)
   end
 

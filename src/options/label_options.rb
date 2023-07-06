@@ -12,7 +12,7 @@ class LabelOptions
     return unless label_ruby_objects.empty?
 
     @label_ruby_objects.each do |label|
-      label_instance = Label.new(label[:title], label[:color])
+      label_instance = Label.new(label["title"], label["color"])
       label_instances_list.push(label_instance)
     end
   end
@@ -33,7 +33,7 @@ class LabelOptions
     if @label_ruby_objects.empty?
       puts "\n======================================================================"
       puts '||                                                                  ||'
-      puts '||                        No labels found 😿                       ||'
+      puts '||                        No labels found 😿                        ||'
       puts '||                                                                  ||'
     else
       puts "There are #{@label_ruby_objects.length} labels:"
