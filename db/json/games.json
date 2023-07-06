@@ -1,0 +1,42 @@
+[
+  {
+    "id": 609,
+    "name": "Silent Hill I",
+    "multiplayer": "false",
+    "publish_date": "2000-02-02",
+    "last_played_at": "2020-01-01",
+    "archived": false
+  },
+  {
+    "id": 258,
+    "name": "Silent Hill",
+    "multiplayer": "false",
+    "publish_date": "1992-02-02",
+    "last_played_at": "2001-01-01",
+    "archived": false
+  },
+  {
+    "id": 188,
+    "name": "Mario car",
+    "multiplayer": "true",
+    "publish_date": "2002-02-10",
+    "last_played_at": "2020-01-01",
+    "archived": false
+  },
+  {
+    "id": 497,
+    "name": "World of Warcraft III",
+    "multiplayer": "false",
+    "publish_date": "2001-01-02",
+    "last_played_at": "2020-02-02",
+    "archived": false
+  },
+  {
+    "id": 197,
+    "name": "Papas",
+    "multiplayer": "false",
+    "publish_date": "2007-02-02",
+    "last_played_at": "2020-01-01",
+    "archived": false
+  }
+]

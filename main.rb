@@ -1,21 +1,42 @@
 require_relative './src/options/game_options'
 require_relative './src/options/add_book'
+require_relative './src/options/author_options'
+require_relative './src/classes/storage'
 
 class Main
   attr_accessor :items, :labels
 
   def initialize
     @game_options = GameOptions.new
+    @author_options = AuthorOptions.new
+    @storage = Storage.new('json', './db/json/')
+    @game_options.game_ruby_objects = @storage.load_data('games')
+    @author_options.author_ruby_objects = @storage.load_data('authors')
+    @author_options.fill_authors_instances_list
     @items = []
     @labels = []
+    puts '╔══════════════════════════════════════════════════════════════╗'
+    puts '║                                                              ║'
+    puts '║                   WELLCOME TO MY CATALOG!                    ║'
+    puts '║                                                              ║'
+    puts '╚══════════════════════════════════════════════════════════════╝'
+    sleep(0.5)
     show_console_options
+  end
+
+  def save_data
+    game_ruby_objects = @game_options.game_ruby_objects
+    author_ruby_objects = @author_options.author_ruby_objects
+    
+    @storage.save_data('games', game_ruby_objects)
+    @storage.save_data('authors', author_ruby_objects)
   end
 
   def show_console_options
     options_array = ['List all books', 'List all music albums', 'List all movies', 'List all games', 'List all genres',
                      'List all labels', 'List all authors', 'List all sources', 'Add book', 'Add a music album', 'Add movie',
                      'Add a game', 'Exit']
-    puts "\nWelcome to the Ruby Console App!"
+
     puts "\nPlease choose an option from the list below:"
     puts '-------------------------------------------'
     options_array.each_with_index do |option, index|
@@ -55,7 +76,7 @@ class Main
       sleep(1)
       show_console_options
     when 7
-      puts 'future method 7'
+      @author_options.list_authors
       sleep(1)
       show_console_options
     when 8
@@ -76,11 +97,12 @@ class Main
       sleep(1)
       show_console_options
     when 12
-      @game_options.add_game
+      @game_options.add_game(@author_options)
       sleep(1)
       show_console_options
     when 13
       puts 'Exit'
+      save_data
     else
       puts '-------------------------------------------'
       puts "\nInvalid option, try again!"
