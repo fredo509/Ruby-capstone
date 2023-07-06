@@ -34,7 +34,7 @@ This project involves creating a console application that allows users to keep t
 
 <div align="center">
 
-  <img src="catalog_of_my_things.png" alt="logo" />
+  <img src="./src/images/catalog_of_my_things.png" alt="logo" />
   <br/>
 
 </div>
