@@ -3,6 +3,7 @@ require_relative './src/options/book_options'
 require_relative './src/options/label_options'
 require_relative './src/options/author_options'
 require_relative './src/classes/storage'
+require_relative './src/options/musicgenre_option'
 
 class Main
   attr_accessor :items, :labels
@@ -17,6 +18,7 @@ class Main
     @book_options.book_ruby_objects = @storage.load_data('books')
     @author_options.author_ruby_objects = @storage.load_data('authors')
     @author_options.fill_authors_instances_list
+    @musicgenre_option = MusicGenreOptions.new
     @label_options.label_ruby_objects = @storage.load_data('labels')
     @label_options.fill_labels_instances_list
     puts '╔══════════════════════════════════════════════════════════════╗'
@@ -62,7 +64,7 @@ class Main
       sleep(0.5)
       show_console_options
     when 2
-      puts 'future method 2'
+      @musicgenre_option.list_all_music_albums
       sleep(0.5)
       show_console_options
     when 3
@@ -74,7 +76,7 @@ class Main
       sleep(0.5)
       show_console_options
     when 5
-      puts 'future method 5'
+      @musicgenre_option.list_all_genres
       sleep(0.5)
       show_console_options
     when 6
@@ -95,7 +97,7 @@ class Main
       sleep(0.5)
       show_console_options
     when 10
-      puts 'future method 10'
+      @musicgenre_option.add_music_album
       sleep(0.5)
       show_console_options
     when 11
