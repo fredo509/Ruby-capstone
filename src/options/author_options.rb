@@ -78,7 +78,7 @@ class AuthorOptions
         puts '||               There are no authors to select from 😿             ||'
         puts '||                                                                  ||'
         puts '======================================================================'
-        sleep(1)
+        sleep(0.5)
         add_author(item)
       else
         puts 'Please, select an author:'
