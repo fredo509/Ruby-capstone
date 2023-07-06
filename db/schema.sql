@@ -11,6 +11,18 @@ CREATE TABLE labels (
   color VARCHAR(60) NOT NULL
 )
 
+CREATE TABLE genres (
+  id BIGSERIAL NOT NULL PRIMARY KEY,
+  name VARCHAR(100),
+);
+
+CREATE TABLE music (
+  id  INT,
+  title VARCHAR(100),
+  on_spotify BOOLEAN,
+  FOREIGN KEY(id) REFERENCES item(id)
+);
+
 CREATE TABLE items_labels (
   id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   item_id INT REFERENCES items (id),
