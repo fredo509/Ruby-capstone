@@ -1,9 +1,10 @@
 require_relative 'item'
 
 class Label
-  attr_reader :title, :color, :items, :id
+  attr_accessor :title, :color
+  attr_reader :items, :id
 
-  def initialize(title, color, id = nil)
+  def initialize(title, color)
     @id = id || Random.rand(1..1000)
     @title = title
     @color = color
@@ -11,9 +12,9 @@ class Label
   end
 
   def add_item(item)
-    return unless item.instance_of?(Item) && !@items.include?(item)
+    raise TypeError, 'Invalid type, must be an Item instance' unless item.is_a?(Item)
 
     @items << item
-    item.add_label(self)
+    item.label = self
   end
 end

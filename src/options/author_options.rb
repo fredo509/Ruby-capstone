@@ -9,19 +9,19 @@ class AuthorOptions
   end
 
   def fill_authors_instances_list
-    if author_ruby_objects.empty?
-      @author_ruby_objects.each do |author|
-        author_instance = Author.new(author[:first_name], author[:last_name])
-        author_instances_list.push(author_instance)
-      end
+    return unless author_ruby_objects.empty?
+
+    @author_ruby_objects.each do |author|
+      author_instance = Author.new(author[:first_name], author[:last_name])
+      author_instances_list.push(author_instance)
     end
   end
 
   def to_ruby_object(author)
     {
-      "id" => author.id,
-      "first_name" => author.first_name,
-      "last_name" => author.last_name,
+      'id' => author.id,
+      'first_name' => author.first_name,
+      'last_name' => author.last_name
     }
   end
 
@@ -39,7 +39,7 @@ class AuthorOptions
       puts "There are #{@author_ruby_objects.length} authors:"
       puts ''
       @author_ruby_objects.each_with_index do |author, index|
-        puts "[#{index + 1}] #{author["first_name"]} #{author["last_name"]}"
+        puts "[#{index + 1}] #{author['first_name']} #{author['last_name']}"
       end
       puts ''
     end
@@ -95,4 +95,4 @@ class AuthorOptions
       author.add_item(item)
     end
   end
-  end
+end

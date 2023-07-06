@@ -1,5 +1,6 @@
 require_relative './src/options/game_options'
-require_relative './src/options/add_book'
+require_relative './src/options/book_options'
+require_relative './src/options/label_options'
 require_relative './src/options/author_options'
 require_relative './src/classes/storage'
 
@@ -9,12 +10,15 @@ class Main
   def initialize
     @game_options = GameOptions.new
     @author_options = AuthorOptions.new
+    @book_options = BookOptions.new
+    @label_options = LabelOptions.new
     @storage = Storage.new('json', './db/json/')
     @game_options.game_ruby_objects = @storage.load_data('games')
+    @book_options.book_ruby_objects = @storage.load_data('books')
     @author_options.author_ruby_objects = @storage.load_data('authors')
     @author_options.fill_authors_instances_list
-    @items = []
-    @labels = []
+    @label_options.label_ruby_objects = @storage.load_data('labels')
+    @label_options.fill_labels_instances_list
     puts '╔══════════════════════════════════════════════════════════════╗'
     puts '║                                                              ║'
     puts '║                   WELLCOME TO MY CATALOG!                    ║'
@@ -27,9 +31,13 @@ class Main
   def save_data
     game_ruby_objects = @game_options.game_ruby_objects
     author_ruby_objects = @author_options.author_ruby_objects
-    
+    label_ruby_objects = @label_options.label_ruby_objects
+    book_ruby_objects = @book_options.book_ruby_objects
+
     @storage.save_data('games', game_ruby_objects)
     @storage.save_data('authors', author_ruby_objects)
+    @storage.save_data('labels', label_ruby_objects)
+    @storage.save_data('books', book_ruby_objects)
   end
 
   def show_console_options
@@ -49,8 +57,7 @@ class Main
   def select_option(option)
     case option
     when 1
-      list_books = ListBooks.new
-      list_books.list_books(@items)
+      @book_options.list_books
       sleep(1)
       show_console_options
     when 2
@@ -70,8 +77,7 @@ class Main
       sleep(1)
       show_console_options
     when 6
-      list_labels = ListLabels.new
-      list_labels.list_labels(@labels)
+      @label_options.list_labels
       puts 'future method 6'
       sleep(1)
       show_console_options
@@ -84,8 +90,7 @@ class Main
       sleep(1)
       show_console_options
     when 9
-      add_book = AddBook.new
-      add_book.make_item(self)
+      @book_options.add_book(@label_options)
       sleep(1)
       show_console_options
     when 10
