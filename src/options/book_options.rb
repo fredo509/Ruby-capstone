@@ -1,5 +1,6 @@
 require_relative '../classes/book'
 require_relative 'label_options'
+require_relative 'author_options'
 
 class BookOptions
   attr_accessor :book_instances, :book_ruby_objects
@@ -43,7 +44,7 @@ class BookOptions
     puts ''
   end
 
-  def add_book(label_options)
+  def add_book(label_options, author_options)
     puts ''
     puts '🚀 Adding a book... 🎮'
     sleep(0.5)
@@ -58,10 +59,12 @@ class BookOptions
     new_book = Book.new(book_name, publisher, publish_date)
     @book_ruby_objects.push(to_ruby_object(new_book))
     label_options.add_label(new_book)
+    author_options.add_author(new_book)
     sleep(0.3)
     puts "\n======================================================================"
     puts '||                                                                  ||'
-    puts '||                          😺 Label added! 📕                     ||'
+    puts '||                          😺 Author added! 📕                     ||'
+    puts '||                          😺 Label added! 📕                      ||'
     sleep(0.3)
     puts '||                          🕹️ Book was added! 😼                    ||'
     puts '||                                                                  ||'

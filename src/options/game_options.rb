@@ -1,5 +1,6 @@
 require_relative '../classes/game'
 require_relative 'author_options'
+require_relative 'label_options'
 
 class GameOptions
   attr_accessor :game_instances, :game_ruby_objects
@@ -41,7 +42,7 @@ class GameOptions
     puts ''
   end
 
-  def add_game(author_options)
+  def add_game(author_options, label_options)
     puts ''
     puts '🚀 Adding a game... 🎮'
     sleep(0.5)
@@ -58,9 +59,11 @@ class GameOptions
     new_game = Game.new(game_name, multiplayer, publish_date, last_played_at)
     @game_ruby_objects.push(to_ruby_object(new_game))
     author_options.add_author(new_game)
+    label_options.add_label(new_game)
     sleep(0.3)
     puts "\n======================================================================"
     puts '||                                                                  ||'
+    puts '||                          😺 Label added! 📕                     ||'
     puts '||                          😺 Author added! 📕                     ||'
     sleep(0.3)
     puts '||                          🕹️ Game was added! 😼                    ||'

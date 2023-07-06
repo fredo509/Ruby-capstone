@@ -28,5 +28,23 @@
     "publisher": "Jadogar",
     "cover_state": "Haroon",
     "publish_date": "2018-03-03"
+  },
+  {
+    "id": 581,
+    "publisher": "Lord of the rings",
+    "cover_state": "Daniel",
+    "publish_date": "2020-02-02"
+  },
+  {
+    "id": 169,
+    "publisher": "Lord of the rings",
+    "cover_state": "Daniel",
+    "publish_date": "2020-02-02"
+  },
+  {
+    "id": 26,
+    "publisher": "Power of now",
+    "cover_state": "daniel",
+    "publish_date": "2020-02-02"
   }
 ]

@@ -91,7 +91,7 @@ class Main
       sleep(0.5)
       show_console_options
     when 9
-      @book_options.add_book(@label_options)
+      @book_options.add_book(@label_options, @author_options)
       sleep(0.5)
       show_console_options
     when 10
@@ -103,7 +103,7 @@ class Main
       sleep(0.5)
       show_console_options
     when 12
-      @game_options.add_game(@author_options)
+      @game_options.add_game(@author_options, @label_options)
       sleep(0.5)
       show_console_options
     when 13
