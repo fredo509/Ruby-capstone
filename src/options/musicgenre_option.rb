@@ -60,6 +60,10 @@ class MusicGenreOptions
 
     def list_all_genres
         all_genres = @genres
+        all_genres.each_with_index do |genre, index|
+        puts "#{index + 1}. Genre\n name: #{genre['name']}"
+        end
+      puts ''
 
          puts "\n======================================================================"
     puts "\n🔥 Listing genre... 🖋️"
@@ -67,9 +71,9 @@ class MusicGenreOptions
     puts ''
     if @genres.empty?
       puts "\n======================================================================"
-      puts '||                                                                  ||'
-      puts '||                        No genre found 😿                       ||'
-      puts '||                                                                  ||'
+      puts '||                                                                    ||'
+      puts '||                        No genre found 😿                          | |'
+      puts '||                                                                    ||'
     else
       puts "I found #{@genres.length} Genre:"
       puts ''
