@@ -1,19 +1,27 @@
 require_relative '../classes/author'
 
 class AuthorOptions
-  attr_reader :authors_objects_list
+  attr_accessor :author_ruby_objects, :authors_instances_list
 
   def initialize
     @authors_instances_list = []
-    @authors_objects_list = []
+    @author_ruby_objects = []
+  end
+
+  def fill_authors_instances_list
+    if author_ruby_objects.empty?
+      @author_ruby_objects.each do |author|
+        author_instance = Author.new(author[:first_name], author[:last_name])
+        author_instances_list.push(author_instance)
+      end
+    end
   end
 
   def to_ruby_object(author)
     {
-      id: author.id,
-      first_name: author.first_name,
-      last_name: author.last_name,
-      archived: author.items
+      "id" => author.id,
+      "first_name" => author.first_name,
+      "last_name" => author.last_name,
     }
   end
 
@@ -22,16 +30,16 @@ class AuthorOptions
     puts "\n🔥 Listing authors... 🖋️"
     sleep(0.5)
     puts ''
-    if @authors_objects_list.empty?
+    if @author_ruby_objects.empty?
       puts "\n======================================================================"
       puts '||                                                                  ||'
       puts '||                        No authors found 😿                       ||'
       puts '||                                                                  ||'
     else
-      puts "There are #{authors_objects_list.length} authors:"
+      puts "There are #{@author_ruby_objects.length} authors:"
       puts ''
-      @authors_objects_list.each_with_index do |author, index|
-        puts "[#{index + 1}] #{author[:first_name]} #{author[:last_name]}"
+      @author_ruby_objects.each_with_index do |author, index|
+        puts "[#{index + 1}] #{author["first_name"]} #{author["last_name"]}"
       end
       puts ''
     end
@@ -45,7 +53,7 @@ class AuthorOptions
     sleep(0.5)
     puts "\nPlease, select an author 📖: "
     puts ''
-    @authors_objects_list.each_with_index do |author, index|
+    @author_ruby_objects.each_with_index do |author, index|
       puts "[#{index + 1}] #{author[:first_name]} #{author[:last_name]}"
     end
     puts ''
@@ -64,7 +72,7 @@ class AuthorOptions
 
     case option
     when 1
-      if @authors_objects_list.empty?
+      if @author_ruby_objects.empty?
         puts "\n======================================================================"
         puts '||                                                                  ||'
         puts '||               There are no authors to select from 😿             ||'
@@ -83,7 +91,7 @@ class AuthorOptions
       last_name = gets.chomp
       author = Author.new(first_name, last_name)
       @authors_instances_list << author
-      @authors_objects_list << to_ruby_object(author)
+      @author_ruby_objects << to_ruby_object(author)
       author.add_item(item)
     end
   end

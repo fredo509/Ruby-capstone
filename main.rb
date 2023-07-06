@@ -1,6 +1,7 @@
 require_relative './src/options/game_options'
 require_relative './src/options/add_book'
 require_relative './src/options/author_options'
+require_relative './src/classes/storage'
 
 class Main
   attr_accessor :items, :labels
@@ -8,6 +9,10 @@ class Main
   def initialize
     @game_options = GameOptions.new
     @author_options = AuthorOptions.new
+    @storage = Storage.new('json', './db/json/')
+    @game_options.game_ruby_objects = @storage.load_data('games')
+    @author_options.author_ruby_objects = @storage.load_data('authors')
+    @author_options.fill_authors_instances_list
     @items = []
     @labels = []
     puts '╔══════════════════════════════════════════════════════════════╗'
@@ -15,8 +20,16 @@ class Main
     puts '║                   WELLCOME TO MY CATALOG!                    ║'
     puts '║                                                              ║'
     puts '╚══════════════════════════════════════════════════════════════╝'
-    sleep(1)
+    sleep(0.5)
     show_console_options
+  end
+
+  def save_data
+    game_ruby_objects = @game_options.game_ruby_objects
+    author_ruby_objects = @author_options.author_ruby_objects
+    
+    @storage.save_data('games', game_ruby_objects)
+    @storage.save_data('authors', author_ruby_objects)
   end
 
   def show_console_options
@@ -89,6 +102,7 @@ class Main
       show_console_options
     when 13
       puts 'Exit'
+      save_data
     else
       puts '-------------------------------------------'
       puts "\nInvalid option, try again!"
