@@ -35,11 +35,13 @@ class Main
     author_ruby_objects = @author_options.author_ruby_objects
     label_ruby_objects = @label_options.label_ruby_objects
     book_ruby_objects = @book_options.book_ruby_objects
+    music_ruby_objects = @musicgenre_option.list_all_music_albums
 
     @storage.save_data('games', game_ruby_objects)
     @storage.save_data('authors', author_ruby_objects)
     @storage.save_data('labels', label_ruby_objects)
     @storage.save_data('books', book_ruby_objects)
+    @storage.save_data('music', music_ruby_objects)
   end
 
   def show_console_options
