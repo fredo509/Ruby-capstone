@@ -37,12 +37,14 @@ class Main
     label_ruby_objects = @label_options.label_ruby_objects
     book_ruby_objects = @book_options.book_ruby_objects
     music_ruby_objects = @musicgenre_option.music_albums
+    genre_ruby_objects = @musicgenre_option.genres
 
     @storage.save_data('games', game_ruby_objects)
     @storage.save_data('authors', author_ruby_objects)
     @storage.save_data('labels', label_ruby_objects)
     @storage.save_data('books', book_ruby_objects)
     @storage.save_data('music', music_ruby_objects)
+    @storage.save_data('genre', genre_ruby_objects)
   end
 
   def show_console_options
@@ -68,6 +70,7 @@ class Main
       show_console_options
     when 2
       @musicgenre_option.music_albums = @storage.load_data('music')
+      @musicgenre_option.genres = @storage.load_data('genre')
       @musicgenre_option.list_all_music_albums
       sleep(0.5)
       show_console_options
@@ -80,6 +83,7 @@ class Main
       sleep(0.5)
       show_console_options
     when 5
+      @musicgenre_option.genres = @storage.load_data('genre')
       @musicgenre_option.list_all_genres
       sleep(0.5)
       show_console_options
