@@ -38,5 +38,13 @@
     "publish_date": "2007-02-02",
     "last_played_at": "2020-01-01",
     "archived": false
+  },
+  {
+    "id": 816,
+    "name": "Rubycon",
+    "multiplayer": "true",
+    "publish_date": "2022-01-01",
+    "last_played_at": "2022-02-02",
+    "archived": false
   }
 ]
