@@ -12,9 +12,9 @@ class Label
   end
 
   def add_item(item)
-    raise TypeError, 'Invalid type, must be an Item instance' unless item.is_a?(Item)
+    return unless item.instance_of?(Item) && !@items.include?(item)
 
     @items << item
-    item.label = self
+    item.add_label(self)
   end
 end
