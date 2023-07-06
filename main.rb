@@ -10,6 +10,12 @@ class Main
     @author_options = AuthorOptions.new
     @items = []
     @labels = []
+    puts '╔══════════════════════════════════════════════════════════════╗'
+    puts '║                                                              ║'
+    puts '║                   WELLCOME TO MY CATALOG!                    ║'
+    puts '║                                                              ║'
+    puts '╚══════════════════════════════════════════════════════════════╝'
+    sleep(1)
     show_console_options
   end
 
@@ -17,7 +23,7 @@ class Main
     options_array = ['List all books', 'List all music albums', 'List all movies', 'List all games', 'List all genres',
                      'List all labels', 'List all authors', 'List all sources', 'Add book', 'Add a music album', 'Add movie',
                      'Add a game', 'Exit']
-    puts "\nWelcome to the Ruby Console App!"
+
     puts "\nPlease choose an option from the list below:"
     puts '-------------------------------------------'
     options_array.each_with_index do |option, index|

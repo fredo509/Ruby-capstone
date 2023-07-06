@@ -26,6 +26,7 @@ class GameOptions
     puts ''
     sleep(0.5)
     if @game_ruby_objects.empty?
+      puts "\n======================================================================"
       puts '||                                                                  ||'
       puts '||                         No games found 😿                        ||'
       puts '||                                                                  ||'
@@ -35,8 +36,8 @@ class GameOptions
         puts "[#{i}] ID: #{game[:id]} - Name: #{game[:name]} - Multiplayer: #{game[:multiplayer]} - Publish Date: #{game[:publish_date]} -
         Last Played At: #{game[:last_played_at]} - Archived: #{game[:archived]}"
       end
+      puts "\n======================================================================"
     end
-    puts "\n======================================================================"
     puts ''
   end
 
@@ -65,7 +66,6 @@ class GameOptions
     puts '||                          🕹️ Game was added! 😼                    ||'
     puts '||                                                                  ||'
     puts '======================================================================'
-    sleep(0.5)
     puts ''
   end
 end
