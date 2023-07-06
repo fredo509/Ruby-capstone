@@ -31,7 +31,12 @@ class BookOptions
       puts '======================================================================'
     else
       @book_ruby_objects.each_with_index do |book, i|
-        puts "[#{i}] ID: #{book[:id]} - publisher: #{book[:publisher]} - cover_state: #{book[:cover_state]} - Publish Date: #{book[:publish_date]}"
+        id = book["id"]
+        publisher = book["publisher"]
+        cover_state = book["cover_state"]
+        publish_date = book["publish_date"]
+        
+        puts "[#{i}] ID: #{id} - Publisher: #{publisher} - Cover State: #{cover_state} - Publish Date: #{publish_date}"
       end
       puts "\n======================================================================"
     end

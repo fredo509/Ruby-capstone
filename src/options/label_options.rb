@@ -53,13 +53,14 @@ class LabelOptions
     sleep(0.5)
     puts "\nPlease, select a label 📖: "
     puts ''
-    @label_ruby_objects.each_with_index do |label, index|
-      puts "[#{index + 1}] #{label[:title]} #{label[:color]}"
+    @label_ruby_objects.each_with_index do |label_hash, index|
+      label = Label.new(label_hash['title'], label_hash['color'])
+      puts "[#{index + 1}] #{label.title} #{label.color}"
     end
     puts ''
-    print 'Please, choose label by number: '
+    print 'Please, choose a label by number: '
     label_index = gets.chomp.to_i
-    label = @labels_instances_list[label_index - 1]
+    label = Label.new(@label_ruby_objects[label_index - 1]['title'], @label_ruby_objects[label_index - 1]['color'])
     label.add_item(item)
   end
 
