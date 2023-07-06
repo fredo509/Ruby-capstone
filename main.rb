@@ -42,6 +42,7 @@ class Main
     options_array.each_with_index do |option, index|
       puts "#{index + 1}. #{option}"
     end
+    puts "-------------------------------------------"
     option = get_user_input('Enter your choice: ').to_i
     select_option(option)
   end

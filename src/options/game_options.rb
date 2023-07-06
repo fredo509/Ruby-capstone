@@ -33,8 +33,8 @@ class GameOptions
       puts '======================================================================'
     else
       @game_ruby_objects.each_with_index do |game, i|
-        puts "[#{i}] | ID: #{game["id"]} | Name: #{game["name"]} | Multiplayer: #{game["multiplayer"]} | Publish Date: #{game["publish_date"]} |
-        Last Played At: #{game["last_played_at"]} | Archived: #{game["archived"]} |"
+        puts "[#{i}] / ID: #{game["id"]} / Name: #{game["name"]} / Multiplayer: #{game["multiplayer"]} / Publish Date: #{game["publish_date"]} /
+    Last Played At: #{game["last_played_at"]} / Archived: #{game["archived"]} /"
       end
       puts "\n======================================================================"
     end
