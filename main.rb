@@ -13,12 +13,13 @@ class Main
     @author_options = AuthorOptions.new
     @book_options = BookOptions.new
     @label_options = LabelOptions.new
+    @musicgenre_option = MusicGenreOptions.new
     @storage = Storage.new('json', './db/json/')
     @game_options.game_ruby_objects = @storage.load_data('games')
     @book_options.book_ruby_objects = @storage.load_data('books')
     @author_options.author_ruby_objects = @storage.load_data('authors')
+    
     @author_options.fill_authors_instances_list
-    @musicgenre_option = MusicGenreOptions.new
     @label_options.label_ruby_objects = @storage.load_data('labels')
     @label_options.fill_labels_instances_list
     puts '╔══════════════════════════════════════════════════════════════╗'
@@ -35,7 +36,7 @@ class Main
     author_ruby_objects = @author_options.author_ruby_objects
     label_ruby_objects = @label_options.label_ruby_objects
     book_ruby_objects = @book_options.book_ruby_objects
-    music_ruby_objects = @musicgenre_option.list_all_music_albums
+    music_ruby_objects = @musicgenre_option.music_albums
 
     @storage.save_data('games', game_ruby_objects)
     @storage.save_data('authors', author_ruby_objects)
@@ -66,6 +67,7 @@ class Main
       sleep(0.5)
       show_console_options
     when 2
+      @musicgenre_option.music_albums = @storage.load_data('music')
       @musicgenre_option.list_all_music_albums
       sleep(0.5)
       show_console_options
@@ -100,6 +102,7 @@ class Main
       show_console_options
     when 10
       @musicgenre_option.add_music_album
+      save_data
       sleep(0.5)
       show_console_options
     when 11
