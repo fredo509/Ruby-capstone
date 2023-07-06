@@ -58,52 +58,52 @@ class Main
     case option
     when 1
       @book_options.list_books
-      sleep(1)
+      sleep(0.5)
       show_console_options
     when 2
       puts 'future method 2'
-      sleep(1)
+      sleep(0.5)
       show_console_options
     when 3
       puts 'future method 3'
-      sleep(1)
+      sleep(0.5)
       show_console_options
     when 4
       @game_options.list_games
-      sleep(1)
+      sleep(0.5)
       show_console_options
     when 5
       puts 'future method 5'
-      sleep(1)
+      sleep(0.5)
       show_console_options
     when 6
       @label_options.list_labels
       puts 'future method 6'
-      sleep(1)
+      sleep(0.5)
       show_console_options
     when 7
       @author_options.list_authors
-      sleep(1)
+      sleep(0.5)
       show_console_options
     when 8
       puts 'future method 8'
-      sleep(1)
+      sleep(0.5)
       show_console_options
     when 9
       @book_options.add_book(@label_options)
-      sleep(1)
+      sleep(0.5)
       show_console_options
     when 10
       puts 'future method 10'
-      sleep(1)
+      sleep(0.5)
       show_console_options
     when 11
       puts 'future method 11'
-      sleep(1)
+      sleep(0.5)
       show_console_options
     when 12
       @game_options.add_game(@author_options)
-      sleep(1)
+      sleep(0.5)
       show_console_options
     when 13
       puts 'Exit'
@@ -112,7 +112,7 @@ class Main
       puts '-------------------------------------------'
       puts "\nInvalid option, try again!"
       puts "\n-------------------------------------------"
-      sleep(1)
+      sleep(0.5)
       show_console_options
     end
   end

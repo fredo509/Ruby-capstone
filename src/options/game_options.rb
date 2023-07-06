@@ -11,12 +11,12 @@ class GameOptions
 
   def to_ruby_object(game)
     {
-      id: game.id,
-      name: game.game_name,
-      multiplayer: game.multiplayer,
-      publish_date: game.publish_date,
-      last_played_at: game.last_played_at,
-      archived: game.archived
+      "id" => game.id,
+      "name" => game.game_name,
+      "multiplayer" => game.multiplayer,
+      "publish_date" => game.publish_date,
+      "last_played_at" => game.last_played_at,
+      "archived" => game.archived
     }
   end
 
@@ -33,8 +33,8 @@ class GameOptions
       puts '======================================================================'
     else
       @game_ruby_objects.each_with_index do |game, i|
-        puts "[#{i}] ID: #{game[:id]} - Name: #{game[:name]} - Multiplayer: #{game[:multiplayer]} - Publish Date: #{game[:publish_date]} -
-        Last Played At: #{game[:last_played_at]} - Archived: #{game[:archived]}"
+        puts "[#{i}] | ID: #{game["id"]} | Name: #{game["name"]} | Multiplayer: #{game["multiplayer"]} | Publish Date: #{game["publish_date"]} |
+        Last Played At: #{game["last_played_at"]} | Archived: #{game["archived"]} |"
       end
       puts "\n======================================================================"
     end
