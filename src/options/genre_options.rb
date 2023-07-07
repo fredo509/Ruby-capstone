@@ -12,7 +12,7 @@ class GenreOptions
     return unless genre_ruby_objects.empty?
 
     @genre_ruby_objects.each do |genre|
-      genre_instance = Genre.new(genre["name"])
+      genre_instance = Genre.new(genre['name'])
       genre_instances_list.push(genre_instance)
     end
   end
@@ -20,7 +20,7 @@ class GenreOptions
   def to_ruby_object(genre)
     {
       'id' => genre.id,
-      'name' => genre.name,
+      'name' => genre.name
     }
   end
 
@@ -66,8 +66,8 @@ class GenreOptions
   def add_genre(item)
     puts "\nHow do you want to add a genre?"
     puts ''
-    puts '[1]'.colorize(:light_red) + ' Select from existing genres'
-    puts '[2]'.colorize(:light_red) + 'Create a new genre'
+    puts "#{'[1]'.colorize(:light_red)} Select from existing genres"
+    puts "#{'[2]'.colorize(:light_red)}Create a new genre"
     option = gets.chomp.to_i
 
     case option

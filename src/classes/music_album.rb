@@ -8,7 +8,7 @@ class Music < Item
     super(publish_date)
     @id = rand(1...100)
     @on_spotify = on_spotify
-    @name =  name
+    @name = name
     @archived = can_be_archived?
   end
 

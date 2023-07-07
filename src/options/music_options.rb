@@ -25,7 +25,7 @@ class MusicOptions
         'color' => music.label.color
       },
       'genre' => {
-        'name' => music.genre.name,
+        'name' => music.genre.name
       }
     }
   end
@@ -43,12 +43,13 @@ class MusicOptions
       puts '♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪'.colorize(:light_red)
     else
       @music_ruby_objects.each_with_index do |music, i|
-        id = music["id"]
-        on_spotify = music["on_spotify"]
-        name = music["name"]
-        publish_date = music["publish_date"]
-        
-        puts "[ ♪ #{i}]".colorize(:light_red) + " ID: #{id} - Music name: #{name} - Is on spotify ? : #{on_spotify} - Publish Date: #{publish_date}".colorize(:light_white)
+        id = music['id']
+        on_spotify = music['on_spotify']
+        name = music['name']
+        publish_date = music['publish_date']
+
+        puts "[ ♪ #{i}]".colorize(:light_red) + " ID: #{id} - Music name: #{name} - Is on spotify ? : #{on_spotify} 
+        - Publish Date: #{publish_date}".colorize(:light_white)
       end
       puts "\n♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪".colorize(:light_red)
     end

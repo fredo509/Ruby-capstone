@@ -26,7 +26,7 @@ class BookOptions
         'color' => book.label.color
       },
       'genre' => {
-        'name' => book.genre.name,
+        'name' => book.genre.name
       }
     }
   end
@@ -44,11 +44,11 @@ class BookOptions
       puts '======================================================================'.colorize(:light_red)
     else
       @book_ruby_objects.each_with_index do |book, i|
-        id = book["id"]
-        publisher = book["publisher"]
-        cover_state = book["cover_state"]
-        publish_date = book["publish_date"]
-        
+        id = book['id']
+        publisher = book['publisher']
+        cover_state = book['cover_state']
+        publish_date = book['publish_date']
+
         puts "[#{i}]".colorize(:light_red) + " ID: #{id} - Publisher: #{publisher} - Cover State: #{cover_state} - Publish Date: #{publish_date}".colorize(:light_white)
       end
       puts "\n======================================================================".colorize(:light_red)

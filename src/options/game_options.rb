@@ -12,12 +12,12 @@ class GameOptions
 
   def to_ruby_object(game)
     {
-      "id" => game.id,
-      "name" => game.game_name,
-      "multiplayer" => game.multiplayer,
-      "publish_date" => game.publish_date,
-      "last_played_at" => game.last_played_at,
-      "archived" => game.archived,
+      'id' => game.id,
+      'name' => game.game_name,
+      'multiplayer' => game.multiplayer,
+      'publish_date' => game.publish_date,
+      'last_played_at' => game.last_played_at,
+      'archived' => game.archived,
       'author' => {
         'first_name' => game.author.first_name,
         'last_name' => game.author.last_name
@@ -27,7 +27,7 @@ class GameOptions
         'color' => game.label.color
       },
       'genre' => {
-        'name' => game.genre.name,
+        'name' => game.genre.name
       }
     }
   end
@@ -45,8 +45,8 @@ class GameOptions
       puts '======================================================================'.colorize(:light_red)
     else
       @game_ruby_objects.each_with_index do |game, i|
-        puts "[#{i}]".colorize(:light_red) + " / Name: #{game["name"]} / Multiplayer: #{game["multiplayer"]} / Publish Date: #{game["publish_date"]} /
-    Last Played At: #{game["last_played_at"]} /".colorize(:light_white)
+        puts "[#{i}]".colorize(:light_red) + " / Name: #{game['name']} / Multiplayer: #{game['multiplayer']} / Publish Date: #{game['publish_date']} /
+    Last Played At: #{game['last_played_at']} /".colorize(:light_white)
       end
       puts "\n======================================================================".colorize(:light_red)
     end

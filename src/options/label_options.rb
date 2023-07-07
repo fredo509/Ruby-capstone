@@ -12,7 +12,7 @@ class LabelOptions
     return unless label_ruby_objects.empty?
 
     @label_ruby_objects.each do |label|
-      label_instance = Label.new(label["title"], label["color"])
+      label_instance = Label.new(label['title'], label['color'])
       label_instances_list.push(label_instance)
     end
   end

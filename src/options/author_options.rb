@@ -12,7 +12,7 @@ class AuthorOptions
     return unless author_ruby_objects.empty?
 
     @author_ruby_objects.each do |author|
-      author_instance = Author.new(author["first_name"], author["last_name"])
+      author_instance = Author.new(author['first_name'], author['last_name'])
       author_instances_list.push(author_instance)
     end
   end
@@ -54,7 +54,7 @@ class AuthorOptions
     puts "\nPlease, select an author 📖: ".colorize(:light_white)
     puts ''
     @author_ruby_objects.each_with_index do |author, index|
-      puts "[#{index + 1}]".colorize(:light_red) + "#{author["first_name"]} #{author["last_name"]}"
+      puts "[#{index + 1}]".colorize(:light_red) + "#{author['first_name']} #{author['last_name']}"
     end
     puts ''
     print 'Please, choose author by number: '.colorize(:light_white)
@@ -66,8 +66,8 @@ class AuthorOptions
   def add_author(item)
     puts "\nHow do you want to add an author?".colorize(:light_white)
     puts ''
-    puts '[1]'.colorize(:light_red) + ' Select from existing authors'
-    puts '[2]'.colorize(:light_red) + 'Create a new author'
+    puts "#{'[1]'.colorize(:light_red)} Select from existing authors"
+    puts "#{'[2]'.colorize(:light_red)}Create a new author"
     option = gets.chomp.to_i
 
     case option
