@@ -26,15 +26,15 @@ class LabelOptions
   end
 
   def list_labels
-    puts "\n======================================================================"
+    puts "\n======================================================================".colorize(:light_red)
     puts "\n🔥 Listing labels... 🖋️"
     sleep(0.5)
     puts ''
     if @label_ruby_objects.empty?
-      puts "\n======================================================================"
-      puts '||                                                                  ||'
+      puts "\n======================================================================".colorize(:light_red)
+      puts '||                                                                  ||'.colorize(:light_red)
       puts '||                        No labels found 😿                        ||'
-      puts '||                                                                  ||'
+      puts '||                                                                  ||'.colorize(:light_red)
     else
       puts "There are #{@label_ruby_objects.length} labels:"
       puts ''
@@ -43,7 +43,7 @@ class LabelOptions
       end
       puts ''
     end
-    puts '======================================================================'
+    puts '======================================================================'.colorize(:light_red)
     puts ''
     sleep(0.5)
   end
@@ -74,11 +74,11 @@ class LabelOptions
     case option
     when 1
       if @label_ruby_objects.empty?
-        puts "\n======================================================================"
-        puts '||                                                                  ||'
+        puts "\n======================================================================".colorize(:light_red)
+        puts '||                                                                  ||'.colorize(:light_red)
         puts '||               There are no labels to select from 😿             ||'
-        puts '||                                                                  ||'
-        puts '======================================================================'
+        puts '||                                                                  ||'.colorize(:light_red)
+        puts '======================================================================'.colorize(:light_red)
         sleep(1)
         add_label(item)
       else

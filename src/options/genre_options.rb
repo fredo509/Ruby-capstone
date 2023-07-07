@@ -25,15 +25,15 @@ class GenreOptions
   end
 
   def list_genres
-    puts "\n======================================================================"
+    puts "\n======================================================================".colorize(:light_red)
     puts "\n🔥 Listing genres... 🖋️"
     sleep(0.5)
     puts ''
     if @genre_ruby_objects.empty?
-      puts "\n======================================================================"
-      puts '||                                                                  ||'
+      puts "\n======================================================================".colorize(:light_red)
+      puts '||                                                                  ||'.colorize(:light_red)
       puts '||                        No genres found 😿                        ||'
-      puts '||                                                                  ||'
+      puts '||                                                                  ||'.colorize(:light_red)
     else
       puts "There are #{@genre_ruby_objects.length} genres:"
       puts ''
@@ -42,7 +42,7 @@ class GenreOptions
       end
       puts ''
     end
-    puts '======================================================================'
+    puts '======================================================================'.colorize(:light_red)
     puts ''
     sleep(0.5)
   end
@@ -73,11 +73,11 @@ class GenreOptions
     case option
     when 1
       if @genre_ruby_objects.empty?
-        puts "\n======================================================================"
-        puts '||                                                                  ||'
+        puts "\n======================================================================".colorize(:light_red)
+        puts '||                                                                  ||'.colorize(:light_red)
         puts '||               There are no genres to select from 😿             ||'
-        puts '||                                                                  ||'
-        puts '======================================================================'
+        puts '||                                                                  ||'.colorize(:light_red)
+        puts '======================================================================'.colorize(:light_red)
         sleep(1)
         add_genre(item)
       else

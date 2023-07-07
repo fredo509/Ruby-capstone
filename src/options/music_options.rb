@@ -25,9 +25,9 @@ class MusicOptions
     sleep(0.5)
     if @music_ruby_objects.empty?
       puts "\n♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪"
-      puts '||                                                                  ||'
+      puts '||                                                                  ||'.colorize(:light_red)
       puts '||                         No musics found 😿                        ||'
-      puts '||                                                                  ||'
+      puts '||                                                                  ||'.colorize(:light_red)
       puts '♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪'
     else
       @music_ruby_objects.each_with_index do |music, i|
@@ -62,14 +62,14 @@ class MusicOptions
     author_options.add_author(new_music)
     label_options.add_label(new_music)
     sleep(0.3)
-    puts "\n======================================================================"
-    puts '||                                                                  ||'
+    puts "\n======================================================================".colorize(:light_red)
+    puts '||                                                                  ||'.colorize(:light_red)
     puts '||                          😺 Author added! 📕                     ||'
     puts '||                          😺 genre added! 📕                      ||'
     sleep(0.3)
     puts '||                          ♫ music was added! 😼                    ||'
-    puts '||                                                                  ||'
-    puts '======================================================================'
+    puts '||                                                                  ||'.colorize(:light_red)
+    puts '======================================================================'.colorize(:light_red)
     puts ''
   end
 end

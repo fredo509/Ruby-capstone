@@ -5,6 +5,7 @@ require_relative './src/options/genre_options'
 require_relative './src/options/label_options'
 require_relative './src/options/author_options'
 require_relative './src/classes/storage'
+require 'colorize'
 
 
 class Main
@@ -17,7 +18,6 @@ class Main
     @label_options = LabelOptions.new
     @music_options = MusicOptions.new
     @genre_options = GenreOptions.new
-    # @musicgenre_option = MusicGenreOptions.new
     @storage = Storage.new('json', './db/json/')
     @game_options.game_ruby_objects = @storage.load_data('games')
     @book_options.book_ruby_objects = @storage.load_data('books')
@@ -29,11 +29,11 @@ class Main
     @genre_options.genre_ruby_objects = @storage.load_data('genre')
     @label_options.fill_labels_instances_list
     @genre_options.fill_genres_instances_list
-    puts '╔══════════════════════════════════════════════════════════════╗'
-    puts '║                                                              ║'
-    puts '║                   WELLCOME TO MY CATALOG!                    ║'
-    puts '║                                                              ║'
-    puts '╚══════════════════════════════════════════════════════════════╝'
+    puts '╔══════════════════════════════════════════════════════════════╗'.colorize(:light_blue)
+    puts '║                                                              ║'.colorize(:light_blue)
+    puts '║                '.colorize(:light_blue) + '   WELCOME TO MY CATALOG!     '.colorize(:light_magenta) + '                ║'.colorize(:light_blue)
+    puts '║                                                              ║'.colorize(:light_blue)
+    puts '╚══════════════════════════════════════════════════════════════╝'.colorize(:light_blue)
     sleep(0.5)
     show_console_options
   end
@@ -55,16 +55,17 @@ class Main
   end
 
   def show_console_options
-    options_array = ['List all books', 'List all music albums', 'List all games', 'List all genres',
-                     'List all labels', 'List all authors', 'Add book', 'Add a music album', 'Add a game', 'Exit']
+    options_array = ['List all books 📚', 'List all music albums 🎵', 'List all games 🕹️', 'List all genres 🧙‍♂️',
+                     'List all labels 🔖', 'List all authors 👨‍🦳', 'Add book 📖', 'Add a music album 💽', 'Add a game 🎮', 'Exit  🚪 | 🚶‍♂️']
 
-    puts "\nPlease choose an option from the list below:"
-    puts '-------------------------------------------'
+    puts "\nPlease choose an option from the list below:".colorize(:light_magenta)
+    puts '-------------------------------------------'.colorize(:light_magenta)
     options_array.each_with_index do |option, index|
-      puts "#{index + 1}. #{option}"
+      puts "#{[index + 1]}".colorize(:light_magenta) + " #{option}".colorize(:light_white)
+   
     end
-    puts "-------------------------------------------"
-    option = get_user_input('Enter your choice: ').to_i
+    puts "-------------------------------------------".colorize(:light_magenta)
+    option = get_user_input('Enter your choice: '.colorize(:light_magenta)).to_i
     select_option(option)
   end
 
@@ -113,9 +114,9 @@ class Main
       puts 'Exit'
       save_data
     else
-      puts '-------------------------------------------'
-      puts "\nInvalid option, try again!"
-      puts "\n-------------------------------------------"
+      puts "\n-------------------------------------------".colorize(:red)
+      puts "\nInvalid option, try again!".colorize(:red)
+      puts "\n-------------------------------------------".colorize(:red)
       sleep(0.5)
       show_console_options
     end

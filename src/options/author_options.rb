@@ -26,15 +26,15 @@ class AuthorOptions
   end
 
   def list_authors
-    puts "\n======================================================================"
+    puts "\n======================================================================".colorize(:light_red)
     puts "\n🔥 Listing authors... 🖋️"
     sleep(0.5)
     puts ''
     if @author_ruby_objects.empty?
-      puts "\n======================================================================"
-      puts '||                                                                  ||'
+      puts "\n======================================================================".colorize(:light_red)
+      puts '||                                                                  ||'.colorize(:light_red)
       puts '||                        No authors found 😿                       ||'
-      puts '||                                                                  ||'
+      puts '||                                                                  ||'.colorize(:light_red)
     else
       puts "There are #{@author_ruby_objects.length} authors:"
       puts ''
@@ -43,7 +43,7 @@ class AuthorOptions
       end
       puts ''
     end
-    puts '======================================================================'
+    puts '======================================================================'.colorize(:light_red)
     puts ''
     sleep(0.5)
   end
@@ -73,11 +73,11 @@ class AuthorOptions
     case option
     when 1
       if @author_ruby_objects.empty?
-        puts "\n======================================================================"
-        puts '||                                                                  ||'
+        puts "\n======================================================================".colorize(:light_red)
+        puts '||                                                                  ||'.colorize(:light_red)
         puts '||               There are no authors to select from 😿             ||'
-        puts '||                                                                  ||'
-        puts '======================================================================'
+        puts '||                                                                  ||'.colorize(:light_red)
+        puts '======================================================================'.colorize(:light_red)
         sleep(0.5)
         add_author(item)
       else

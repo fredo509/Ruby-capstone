@@ -22,22 +22,22 @@ class GameOptions
   end
 
   def list_games
-    puts "\n======================================================================"
-    puts "\n🚀 Listing games... 🎮"
+    puts "\n======================================================================".colorize(:light_red)
+    puts "\n🚀 Listing games... 🎮".colorize(:light_white)
     puts ''
     sleep(0.5)
     if @game_ruby_objects.empty?
-      puts "\n======================================================================"
-      puts '||                                                                  ||'
+      puts "\n======================================================================".colorize(:light_red)
+      puts '||                                                                  ||'.colorize(:light_red)
       puts '||                         No games found 😿                        ||'
-      puts '||                                                                  ||'
-      puts '======================================================================'
+      puts '||                                                                  ||'.colorize(:light_red)
+      puts '======================================================================'.colorize(:light_red)
     else
       @game_ruby_objects.each_with_index do |game, i|
-        puts "[#{i}] / ID: #{game["id"]} / Name: #{game["name"]} / Multiplayer: #{game["multiplayer"]} / Publish Date: #{game["publish_date"]} /
-    Last Played At: #{game["last_played_at"]} / Archived: #{game["archived"]} /"
+        puts "[#{i}]".colorize(:light_red) + " / Name: #{game["name"]} / Multiplayer: #{game["multiplayer"]} / Publish Date: #{game["publish_date"]} /
+    Last Played At: #{game["last_played_at"]} /".colorize(:light_white)
       end
-      puts "\n======================================================================"
+      puts "\n======================================================================".colorize(:light_red)
     end
     puts ''
   end
@@ -46,7 +46,7 @@ class GameOptions
     puts ''
     puts '🚀 Adding a game... 🎮'
     sleep(0.5)
-    puts "\n======================================================================"
+    puts "\n======================================================================".colorize(:light_red)
     puts ''
     puts 'What is the name of the game?'
     game_name = gets.chomp
@@ -62,14 +62,14 @@ class GameOptions
     author_options.add_author(new_game)
     label_options.add_label(new_game)
     sleep(0.3)
-    puts "\n======================================================================"
-    puts '||                                                                  ||'
+    puts "\n======================================================================".colorize(:light_red)
+    puts '||                                                                  ||'.colorize(:light_red)
     puts '||                          😺 Label added! 📕                     ||'
     puts '||                          😺 Author added! 📕                     ||'
     sleep(0.3)
     puts '||                          🕹️ Game was added! 😼                    ||'
-    puts '||                                                                  ||'
-    puts '======================================================================'
+    puts '||                                                                  ||'.colorize(:light_red)
+    puts '======================================================================'.colorize(:light_red)
     puts ''
   end
 end

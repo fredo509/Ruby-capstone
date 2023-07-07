@@ -20,16 +20,16 @@ class BookOptions
   end
 
   def list_books
-    puts "\n======================================================================"
+    puts "\n======================================================================".colorize(:light_red)
     puts "\n🚀 Listing books... 🎮"
     puts ''
     sleep(0.5)
     if @book_ruby_objects.empty?
-      puts "\n======================================================================"
-      puts '||                                                                  ||'
+      puts "\n======================================================================".colorize(:light_red)
+      puts '||                                                                  ||'.colorize(:light_red)
       puts '||                         No books found 😿                        ||'
-      puts '||                                                                  ||'
-      puts '======================================================================'
+      puts '||                                                                  ||'.colorize(:light_red)
+      puts '======================================================================'.colorize(:light_red)
     else
       @book_ruby_objects.each_with_index do |book, i|
         id = book["id"]
@@ -39,7 +39,7 @@ class BookOptions
         
         puts "[#{i}] ID: #{id} - Publisher: #{publisher} - Cover State: #{cover_state} - Publish Date: #{publish_date}"
       end
-      puts "\n======================================================================"
+      puts "\n======================================================================".colorize(:light_red)
     end
     puts ''
   end
@@ -48,7 +48,7 @@ class BookOptions
     puts ''
     puts '🚀 Adding a book... 🎮'
     sleep(0.5)
-    puts "\n======================================================================"
+    puts "\n======================================================================".colorize(:light_red)
     puts ''
     puts 'What is the name of the book?'
     book_name = gets.chomp
@@ -62,14 +62,14 @@ class BookOptions
     label_options.add_label(new_book)
     author_options.add_author(new_book)
     sleep(0.3)
-    puts "\n======================================================================"
-    puts '||                                                                  ||'
+    puts "\n======================================================================".colorize(:light_red)
+    puts '||                                                                  ||'.colorize(:light_red)
     puts '||                          😺 Author added! 📕                     ||'
     puts '||                          😺 Label added! 📕                      ||'
     sleep(0.3)
     puts '||                          🕹️ Book was added! 😼                    ||'
-    puts '||                                                                  ||'
-    puts '======================================================================'
+    puts '||                                                                  ||'.colorize(:light_red)
+    puts '======================================================================'.colorize(:light_red)
     puts ''
   end
 end
