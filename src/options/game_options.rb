@@ -42,7 +42,7 @@ class GameOptions
     puts ''
   end
 
-  def add_game(author_options, label_options)
+  def add_game(author_options, label_options, genre_options)
     puts ''
     puts '🚀 Adding a game... 🎮'
     sleep(0.5)
@@ -58,6 +58,7 @@ class GameOptions
     last_played_at = gets.chomp
     new_game = Game.new(game_name, multiplayer, publish_date, last_played_at)
     @game_ruby_objects.push(to_ruby_object(new_game))
+    genre_options.add_genre(new_game)
     author_options.add_author(new_game)
     label_options.add_label(new_game)
     sleep(0.3)

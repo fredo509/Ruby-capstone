@@ -46,5 +46,11 @@
     "publisher": "Power of now",
     "cover_state": "daniel",
     "publish_date": "2020-02-02"
+  },
+  {
+    "id": 527,
+    "publisher": "Lord of the rings",
+    "cover_state": "Daniel",
+    "publish_date": "1987-02-02"
   }
 ]

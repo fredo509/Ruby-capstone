@@ -44,7 +44,7 @@ class BookOptions
     puts ''
   end
 
-  def add_book(label_options, author_options)
+  def add_book(label_options, author_options, genre_options)
     puts ''
     puts '🚀 Adding a book... 🎮'
     sleep(0.5)
@@ -58,6 +58,7 @@ class BookOptions
     publish_date = gets.chomp
     new_book = Book.new(book_name, publisher, publish_date)
     @book_ruby_objects.push(to_ruby_object(new_book))
+    genre_options.add_genre(new_book)
     label_options.add_label(new_book)
     author_options.add_author(new_book)
     sleep(0.3)

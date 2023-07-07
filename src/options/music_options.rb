@@ -43,7 +43,7 @@ class MusicOptions
     puts ''
   end
 
-  def add_music(genre_options, author_options)
+  def add_music(genre_options, author_options, label_options)
     puts ''
     puts '🚀 Adding a music...  ♫'
     sleep(0.5)
@@ -60,6 +60,7 @@ class MusicOptions
     @music_ruby_objects.push(to_ruby_object(new_music))
     genre_options.add_genre(new_music)
     author_options.add_author(new_music)
+    label_options.add_label(new_music)
     sleep(0.3)
     puts "\n======================================================================"
     puts '||                                                                  ||'
