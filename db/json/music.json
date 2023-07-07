@@ -1,17 +1,3 @@
 [
-  {
-    "name": "Ala",
-    "publish_date": "2010-03-22",
-    "on_spotify": true
-  },
-  {
-    "id": 89,
-    "on_spotify": true,
-    "publish_date": "2010-03-22"
-  },
-  {
-    "id": 95,
-    "on_spotify": true,
-    "publish_date": "1576-01-01"
-  }
+
 ]

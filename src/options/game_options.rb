@@ -17,7 +17,18 @@ class GameOptions
       "multiplayer" => game.multiplayer,
       "publish_date" => game.publish_date,
       "last_played_at" => game.last_played_at,
-      "archived" => game.archived
+      "archived" => game.archived,
+      'author' => {
+        'first_name' => game.author.first_name,
+        'last_name' => game.author.last_name
+      },
+      'label' => {
+        'title' => game.label.title,
+        'color' => game.label.color
+      },
+      'genre' => {
+        'name' => game.genre.name,
+      }
     }
   end
 
@@ -57,11 +68,15 @@ class GameOptions
     puts 'What is the last played at? (YYYY-MM-DD)'.colorize(:light_white)
     last_played_at = gets.chomp
     new_game = Game.new(game_name, multiplayer, publish_date, last_played_at)
-    @game_ruby_objects.push(to_ruby_object(new_game))
     genre_options.add_genre(new_game)
     author_options.add_author(new_game)
     label_options.add_label(new_game)
+    @game_ruby_objects.push(to_ruby_object(new_game))
     sleep(0.3)
+    puts new_game.label
+    puts new_game.author
+    puts new_game.genre
+
     puts "\n======================================================================".colorize(:light_red)
     puts '||                                                                  ||'.colorize(:light_red)
     puts '||                          😺 Label added! 📕                     ||'

@@ -15,7 +15,18 @@ class BookOptions
       id: book.id,
       publisher: book.publisher,
       cover_state: book.cover_state,
-      publish_date: book.publish_date
+      publish_date: book.publish_date,
+      'author' => {
+        'first_name' => game.author.first_name,
+        'last_name' => game.author.last_name
+      },
+      'label' => {
+        'title' => game.label.title,
+        'color' => game.label.color
+      },
+      'genre' => {
+        'name' => game.genre.name,
+      }
     }
   end
 

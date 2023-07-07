@@ -14,7 +14,18 @@ class MusicOptions
     {
       id: music.id,
       on_spotify: music.on_spotify,
-      publish_date: music.publish_date
+      publish_date: music.publish_date,
+      'author' => {
+        'first_name' => game.author.first_name,
+        'last_name' => game.author.last_name
+      },
+      'label' => {
+        'title' => game.label.title,
+        'color' => game.label.color
+      },
+      'genre' => {
+        'name' => game.genre.name,
+      }
     }
   end
 
