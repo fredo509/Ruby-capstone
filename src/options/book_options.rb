@@ -49,7 +49,8 @@ class BookOptions
         cover_state = book['cover_state']
         publish_date = book['publish_date']
 
-        puts "[#{i}]".colorize(:light_red) + " ID: #{id} - Publisher: #{publisher} - Cover State: #{cover_state} - Publish Date: #{publish_date}".colorize(:light_white)
+        puts "[#{i}]".colorize(:light_red) + " ID: #{id} - Publisher: #{publisher} - Cover State: #{cover_state} 
+        - Publish Date: #{publish_date}".colorize(:light_white)
       end
       puts "\n======================================================================".colorize(:light_red)
     end
