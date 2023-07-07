@@ -1,27 +1,34 @@
 require_relative './src/options/game_options'
 require_relative './src/options/book_options'
+require_relative './src/options/music_options'
+require_relative './src/options/genre_options'
 require_relative './src/options/label_options'
 require_relative './src/options/author_options'
 require_relative './src/classes/storage'
-require_relative './src/options/musicgenre_option'
+
 
 class Main
-  attr_accessor :items, :labels
+  attr_accessor :items, :labels, :genre
 
   def initialize
     @game_options = GameOptions.new
     @author_options = AuthorOptions.new
     @book_options = BookOptions.new
     @label_options = LabelOptions.new
-    @musicgenre_option = MusicGenreOptions.new
+    @music_options = MusicOptions.new
+    @genre_options = GenreOptions.new
+    # @musicgenre_option = MusicGenreOptions.new
     @storage = Storage.new('json', './db/json/')
     @game_options.game_ruby_objects = @storage.load_data('games')
     @book_options.book_ruby_objects = @storage.load_data('books')
+    @music_options.music_ruby_objects = @storage.load_data('music')
     @author_options.author_ruby_objects = @storage.load_data('authors')
     
     @author_options.fill_authors_instances_list
     @label_options.label_ruby_objects = @storage.load_data('labels')
+    @genre_options.genre_ruby_objects = @storage.load_data('genre')
     @label_options.fill_labels_instances_list
+    @genre_options.fill_genres_instances_list
     puts '╔══════════════════════════════════════════════════════════════╗'
     puts '║                                                              ║'
     puts '║                   WELLCOME TO MY CATALOG!                    ║'
@@ -36,8 +43,8 @@ class Main
     author_ruby_objects = @author_options.author_ruby_objects
     label_ruby_objects = @label_options.label_ruby_objects
     book_ruby_objects = @book_options.book_ruby_objects
-    music_ruby_objects = @musicgenre_option.music_albums
-    genre_ruby_objects = @musicgenre_option.genres
+    music_ruby_objects = @music_options.music_ruby_objects
+    genre_ruby_objects = @genre_options.genre_ruby_objects
 
     @storage.save_data('games', game_ruby_objects)
     @storage.save_data('authors', author_ruby_objects)
@@ -69,9 +76,7 @@ class Main
       sleep(0.5)
       show_console_options
     when 2
-      @musicgenre_option.music_albums = @storage.load_data('music')
-      @musicgenre_option.genres = @storage.load_data('genre')
-      @musicgenre_option.list_all_music_albums
+       @music_options.list_musics
       sleep(0.5)
       show_console_options
     when 3
@@ -83,13 +88,11 @@ class Main
       sleep(0.5)
       show_console_options
     when 5
-      @musicgenre_option.genres = @storage.load_data('genre')
-      @musicgenre_option.list_all_genres
+      @genre_options.list_genres
       sleep(0.5)
       show_console_options
     when 6
       @label_options.list_labels
-      puts 'future method 6'
       sleep(0.5)
       show_console_options
     when 7
@@ -105,8 +108,7 @@ class Main
       sleep(0.5)
       show_console_options
     when 10
-      @musicgenre_option.add_music_album
-      save_data
+     @music_options.add_music(@genre_options, @author_options)
       sleep(0.5)
       show_console_options
     when 11
