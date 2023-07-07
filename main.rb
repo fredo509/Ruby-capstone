@@ -96,14 +96,17 @@ class Main
       show_console_options
     when 7
       @book_options.add_book(@label_options, @author_options, @genre_options)
+      save_data
       sleep(0.5)
       show_console_options
     when 8
       @music_options.add_music(@genre_options, @author_options, @label_options)
+      save_data
       sleep(0.5)
       show_console_options
     when 9
       @game_options.add_game(@author_options, @label_options, @genre_options)
+      save_data
       sleep(0.5)
       show_console_options
     when 10

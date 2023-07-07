@@ -52,5 +52,11 @@
     "publisher": "Lord of the rings",
     "cover_state": "Daniel",
     "publish_date": "1987-02-02"
+  },
+  {
+    "id": 524,
+    "publisher": "Last time to live",
+    "cover_state": "Bill",
+    "publish_date": "2010-03-23"
   }
 ]
