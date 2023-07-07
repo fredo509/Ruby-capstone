@@ -39,7 +39,7 @@ class AuthorOptions
       puts "There are #{@author_ruby_objects.length} authors:"
       puts ''
       @author_ruby_objects.each_with_index do |author, index|
-        puts "[#{index + 1}] #{author['first_name']} #{author['last_name']}"
+        puts "[#{index + 1}]".colorize(:light_red) + " #{author['first_name']} #{author['last_name']}".colorize(:light_white)
       end
       puts ''
     end

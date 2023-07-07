@@ -44,17 +44,17 @@ class GameOptions
 
   def add_game(author_options, label_options, genre_options)
     puts ''
-    puts '🚀 Adding a game... 🎮'
+    puts '🚀 Adding a game... 🎮'.colorize(:light_white)
     sleep(0.5)
     puts "\n======================================================================".colorize(:light_red)
     puts ''
-    puts 'What is the name of the game?'
+    puts 'What is the name of the game?'.colorize(:light_white)
     game_name = gets.chomp
-    puts 'Is it multiplayer? (true/false)'
+    puts 'Is it multiplayer? (true/false)'.colorize(:light_white)
     multiplayer = gets.chomp
-    puts 'What is the publish date? (YYYY-MM-DD)'
+    puts 'What is the publish date? (YYYY-MM-DD)'.colorize(:light_white)
     publish_date = gets.chomp
-    puts 'What is the last played at? (YYYY-MM-DD)'
+    puts 'What is the last played at? (YYYY-MM-DD)'.colorize(:light_white)
     last_played_at = gets.chomp
     new_game = Game.new(game_name, multiplayer, publish_date, last_played_at)
     @game_ruby_objects.push(to_ruby_object(new_game))
