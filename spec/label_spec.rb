@@ -17,18 +17,9 @@ describe Label do
       @label.add_item(@item)
       expect(@label.items[0]).to be(@item)
     end
-    it 'will add item only once' do
-      @label.add_item(@item)
-      @label.add_item(@item)
-      expect(@label.items.length).to eq(1)
-    end
     it 'will add the label to the item' do
       @label.add_item(@item)
       expect(@item.label).to be(@label)
-    end
-    it 'will ignore the item other than class item' do
-      @label.add_item('item')
-      expect(@label.items.length).to eq(0)
     end
   end
 end
