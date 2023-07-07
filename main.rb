@@ -55,9 +55,8 @@ class Main
   end
 
   def show_console_options
-    options_array = ['List all books', 'List all music albums', 'List all movies', 'List all games', 'List all genres',
-                     'List all labels', 'List all authors', 'List all sources', 'Add book', 'Add a music album', 'Add movie',
-                     'Add a game', 'Exit']
+    options_array = ['List all books', 'List all music albums', 'List all games', 'List all genres',
+                     'List all labels', 'List all authors', 'Add book', 'Add a music album', 'Add a game', 'Exit']
 
     puts "\nPlease choose an option from the list below:"
     puts '-------------------------------------------'
@@ -80,46 +79,34 @@ class Main
       sleep(0.5)
       show_console_options
     when 3
-      puts 'future method 3'
-      sleep(0.5)
-      show_console_options
-    when 4
       @game_options.list_games
       sleep(0.5)
       show_console_options
-    when 5
+    when 4
       @genre_options.list_genres
       sleep(0.5)
       show_console_options
-    when 6
+    when 5
       @label_options.list_labels
       sleep(0.5)
       show_console_options
-    when 7
+    when 6
       @author_options.list_authors
       sleep(0.5)
       show_console_options
-    when 8
-      puts 'future method 8'
-      sleep(0.5)
-      show_console_options
-    when 9
+    when 7
       @book_options.add_book(@label_options, @author_options, @genre_options)
       sleep(0.5)
       show_console_options
-    when 10
-     @music_options.add_music(@genre_options, @author_options, @label_options)
+    when 8
+      @music_options.add_music(@genre_options, @author_options, @label_options)
       sleep(0.5)
       show_console_options
-    when 11
-      puts 'future method 11'
-      sleep(0.5)
-      show_console_options
-    when 12
+    when 9
       @game_options.add_game(@author_options, @label_options, @genre_options)
       sleep(0.5)
       show_console_options
-    when 13
+    when 10
       puts 'Exit'
       save_data
     else
