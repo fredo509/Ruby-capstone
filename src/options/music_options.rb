@@ -12,9 +12,9 @@ class MusicOptions
 
   def to_ruby_object(music)
     {
-      id: music.id,
-      on_spotify: music.on_spotify,
-      publish_date: music.publish_date,
+      'id' => music.id,
+      'on_spotify' => music.on_spotify,
+      'publish_date' => music.publish_date,
       'author' => {
         'first_name' => music.author.first_name,
         'last_name' => music.author.last_name

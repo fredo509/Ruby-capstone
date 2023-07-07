@@ -12,10 +12,10 @@ class BookOptions
 
   def to_ruby_object(book)
     {
-      id: book.id,
-      publisher: book.publisher,
-      cover_state: book.cover_state,
-      publish_date: book.publish_date,
+      'id' => book.id,
+      'publisher' => book.publisher,
+      'cover_state' => book.cover_state,
+      'publish_date' => book.publish_date,
       'author' => {
         'first_name' => book.author.first_name,
         'last_name' => book.author.last_name
