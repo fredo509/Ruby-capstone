@@ -73,10 +73,7 @@ class GameOptions
     label_options.add_label(new_game)
     @game_ruby_objects.push(to_ruby_object(new_game))
     sleep(0.3)
-    puts new_game.label
-    puts new_game.author
-    puts new_game.genre
-
+    
     puts "\n======================================================================".colorize(:light_red)
     puts '||                                                                  ||'.colorize(:light_red)
     puts '||                          😺 Label added! 📕                     ||'
