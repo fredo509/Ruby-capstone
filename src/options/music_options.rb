@@ -15,6 +15,7 @@ class MusicOptions
       'id' => music.id,
       'on_spotify' => music.on_spotify,
       'publish_date' => music.publish_date,
+      'archived' => music.archived,
       'author' => {
         'first_name' => music.author.first_name,
         'last_name' => music.author.last_name
@@ -30,16 +31,16 @@ class MusicOptions
   end
 
   def list_musics
-    puts "\n♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪"
-    puts "\n🚀 Listing musics... ♫"
+    puts "\n♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪".colorize(:light_red)
+    puts "\n🚀 Listing musics... ♫".colorize(:light_white)
     puts ''
     sleep(0.5)
     if @music_ruby_objects.empty?
-      puts "\n♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪"
+      puts "\n♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪".colorize(:light_red)
       puts '||                                                                  ||'.colorize(:light_red)
-      puts '||                         No musics found 😿                        ||'
+      puts '||                         No musics found 😿                        ||'.colorize(:light_white)
       puts '||                                                                  ||'.colorize(:light_red)
-      puts '♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪'
+      puts '♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪'.colorize(:light_red)
     else
       @music_ruby_objects.each_with_index do |music, i|
         id = music["id"]
@@ -47,25 +48,25 @@ class MusicOptions
         name = music["name"]
         publish_date = music["publish_date"]
         
-        puts "[ ♪ #{i}] ID: #{id} - Music name: #{name} - Is on spotify ? : #{on_spotify} - Publish Date: #{publish_date}"
+        puts "[ ♪ #{i}]".colorize(:light_red) + " ID: #{id} - Music name: #{name} - Is on spotify ? : #{on_spotify} - Publish Date: #{publish_date}".colorize(:light_white)
       end
-      puts "\n♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪"
+      puts "\n♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪".colorize(:light_red)
     end
     puts ''
   end
 
   def add_music(genre_options, author_options, label_options)
     puts ''
-    puts '🚀 Adding a music...  ♫'
+    puts '🚀 Adding a music...  ♫'.colorize(:light_white)
     sleep(0.5)
     puts "\n♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪
-    "
+    ".colorize(:light_red)
     puts ''
-    puts 'What is the name of the music?'
+    puts 'What is the name of the music?'.colorize(:light_white)
     music_name = gets.chomp
-    puts 'What is the publish date? (YYYY-MM-DD)'
+    puts 'What is the publish date? (YYYY-MM-DD)'.colorize(:light_white)
     publish_date = gets.chomp
-    puts 'Is the music on Spotify? (Y/N): '
+    puts 'Is the music on Spotify? (Y/N): '.colorize(:light_white)
     on_spotify = gets.chomp.downcase == 'y'
     new_music = Music.new(music_name, publish_date, on_spotify)
     genre_options.add_genre(new_music)
@@ -75,10 +76,10 @@ class MusicOptions
     sleep(0.3)
     puts "\n======================================================================".colorize(:light_red)
     puts '||                                                                  ||'.colorize(:light_red)
-    puts '||                          😺 Author added! 📕                     ||'
-    puts '||                          😺 genre added! 📕                      ||'
+    puts '||                          😺 Author added! 📕                     ||'.colorize(:light_white)
+    puts '||                          😺 genre added! 📕                      ||'.colorize(:light_white)
     sleep(0.3)
-    puts '||                          ♫ music was added! 😼                    ||'
+    puts '||                          ♫ music was added! 😼                    ||'.colorize(:light_white)
     puts '||                                                                  ||'.colorize(:light_red)
     puts '======================================================================'.colorize(:light_red)
     puts ''

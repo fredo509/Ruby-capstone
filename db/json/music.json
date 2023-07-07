@@ -1,3 +1,53 @@
 [
-
+  {
+    "id": 55,
+    "on_spotify": false,
+    "publish_date": "2020-01-01",
+    "archived": false,
+    "author": {
+      "first_name": "Luis",
+      "last_name": "Fonsi"
+    },
+    "label": {
+      "title": "Music",
+      "color": "Green"
+    },
+    "genre": {
+      "name": "Regueton"
+    }
+  },
+  {
+    "id": 1,
+    "on_spotify": true,
+    "publish_date": "2000-01-01",
+    "archived": true,
+    "author": {
+      "first_name": "Metallica",
+      "last_name": ""
+    },
+    "label": {
+      "title": "Music",
+      "color": "Black"
+    },
+    "genre": {
+      "name": "Rock"
+    }
+  },
+  {
+    "id": 36,
+    "on_spotify": true,
+    "publish_date": "1996-02-02",
+    "archived": true,
+    "author": {
+      "first_name": "Pink",
+      "last_name": "Floyd"
+    },
+    "label": {
+      "title": "Metal",
+      "color": "Blue"
+    },
+    "genre": {
+      "name": "Rock"
+    }
+  }
 ]

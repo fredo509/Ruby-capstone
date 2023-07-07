@@ -16,6 +16,7 @@ class BookOptions
       'publisher' => book.publisher,
       'cover_state' => book.cover_state,
       'publish_date' => book.publish_date,
+      'archived' => book.archived,
       'author' => {
         'first_name' => book.author.first_name,
         'last_name' => book.author.last_name
@@ -32,7 +33,7 @@ class BookOptions
 
   def list_books
     puts "\n======================================================================".colorize(:light_red)
-    puts "\n🚀 Listing books... 🎮"
+    puts "\n🚀 Listing books... 🎮".colorize(:light_white)
     puts ''
     sleep(0.5)
     if @book_ruby_objects.empty?
@@ -48,7 +49,7 @@ class BookOptions
         cover_state = book["cover_state"]
         publish_date = book["publish_date"]
         
-        puts "[#{i}] ID: #{id} - Publisher: #{publisher} - Cover State: #{cover_state} - Publish Date: #{publish_date}"
+        puts "[#{i}]".colorize(:light_red) + " ID: #{id} - Publisher: #{publisher} - Cover State: #{cover_state} - Publish Date: #{publish_date}".colorize(:light_white)
       end
       puts "\n======================================================================".colorize(:light_red)
     end
@@ -61,11 +62,11 @@ class BookOptions
     sleep(0.5)
     puts "\n======================================================================".colorize(:light_red)
     puts ''
-    puts 'What is the name of the book?'
+    puts 'What is the name of the book?'.colorize(:light_white)
     book_name = gets.chomp
-    puts 'What is the publisher name'
+    puts 'What is the publisher name'.colorize(:light_white)
     publisher = gets.chomp
-    puts 'What is the publish date? (YYYY-MM-DD)'
+    puts 'What is the publish date? (YYYY-MM-DD)'.colorize(:light_white)
     publish_date = gets.chomp
     new_book = Book.new(book_name, publisher, publish_date)
     genre_options.add_genre(new_book)

@@ -40,7 +40,7 @@ class GameOptions
     if @game_ruby_objects.empty?
       puts "\n======================================================================".colorize(:light_red)
       puts '||                                                                  ||'.colorize(:light_red)
-      puts '||                         No games found 😿                        ||'
+      puts '||                         No games found 😿                        ||'.colorize(:light_white)
       puts '||                                                                  ||'.colorize(:light_red)
       puts '======================================================================'.colorize(:light_red)
     else
@@ -73,13 +73,13 @@ class GameOptions
     label_options.add_label(new_game)
     @game_ruby_objects.push(to_ruby_object(new_game))
     sleep(0.3)
-    
+
     puts "\n======================================================================".colorize(:light_red)
     puts '||                                                                  ||'.colorize(:light_red)
-    puts '||                          😺 Label added! 📕                     ||'
-    puts '||                          😺 Author added! 📕                     ||'
+    puts '||                          😺 Label added! 📕                     ||'.colorize(:light_white)
+    puts '||                          😺 Author added! 📕                     ||'.colorize(:light_white)
     sleep(0.3)
-    puts '||                          🕹️ Game was added! 😼                    ||'
+    puts '||                          🕹️ Game was added! 😼                    ||'.colorize(:light_white)
     puts '||                                                                  ||'.colorize(:light_red)
     puts '======================================================================'.colorize(:light_red)
     puts ''
