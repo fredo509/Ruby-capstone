@@ -16,15 +16,15 @@ class MusicOptions
       on_spotify: music.on_spotify,
       publish_date: music.publish_date,
       'author' => {
-        'first_name' => game.author.first_name,
-        'last_name' => game.author.last_name
+        'first_name' => music.author.first_name,
+        'last_name' => music.author.last_name
       },
       'label' => {
-        'title' => game.label.title,
-        'color' => game.label.color
+        'title' => music.label.title,
+        'color' => music.label.color
       },
       'genre' => {
-        'name' => game.genre.name,
+        'name' => music.genre.name,
       }
     }
   end
@@ -68,10 +68,10 @@ class MusicOptions
     puts 'Is the music on Spotify? (Y/N): '
     on_spotify = gets.chomp.downcase == 'y'
     new_music = Music.new(music_name, publish_date, on_spotify)
-    @music_ruby_objects.push(to_ruby_object(new_music))
     genre_options.add_genre(new_music)
     author_options.add_author(new_music)
     label_options.add_label(new_music)
+    @music_ruby_objects.push(to_ruby_object(new_music))
     sleep(0.3)
     puts "\n======================================================================".colorize(:light_red)
     puts '||                                                                  ||'.colorize(:light_red)

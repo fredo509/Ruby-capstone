@@ -17,15 +17,15 @@ class BookOptions
       cover_state: book.cover_state,
       publish_date: book.publish_date,
       'author' => {
-        'first_name' => game.author.first_name,
-        'last_name' => game.author.last_name
+        'first_name' => book.author.first_name,
+        'last_name' => book.author.last_name
       },
       'label' => {
-        'title' => game.label.title,
-        'color' => game.label.color
+        'title' => book.label.title,
+        'color' => book.label.color
       },
       'genre' => {
-        'name' => game.genre.name,
+        'name' => book.genre.name,
       }
     }
   end
@@ -68,10 +68,10 @@ class BookOptions
     puts 'What is the publish date? (YYYY-MM-DD)'
     publish_date = gets.chomp
     new_book = Book.new(book_name, publisher, publish_date)
-    @book_ruby_objects.push(to_ruby_object(new_book))
     genre_options.add_genre(new_book)
     label_options.add_label(new_book)
     author_options.add_author(new_book)
+    @book_ruby_objects.push(to_ruby_object(new_book))
     sleep(0.3)
     puts "\n======================================================================".colorize(:light_red)
     puts '||                                                                  ||'.colorize(:light_red)
