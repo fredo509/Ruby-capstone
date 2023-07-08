@@ -1,5 +1,19 @@
 <a name="readme-top"></a>
 
+<div align="center">
+
+  <img src="https://github.com/carreraprogrammer/To-do-List/blob/master/carrera_logo.png?raw=true" alt="logo" width="140"  height="auto" />
+  <br/>
+
+</div>
+
+<div align="center">
+
+  <img src="./src/images/preview.png" alt="preview" />
+  <br/>
+
+</div>
+
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
@@ -34,7 +48,7 @@ This project involves creating a console application that allows users to keep t
 
 <div align="center">
 
-  <img src="./src/images/catalog_of_my_things.png" alt="logo" />
+  <img src="./src/images/catalog_of_my_things.png" alt="UML" />
   <br/>
 
 </div>
