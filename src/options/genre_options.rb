@@ -12,7 +12,7 @@ class GenreOptions
     return unless genre_ruby_objects.empty?
 
     @genre_ruby_objects.each do |genre|
-      genre_instance = Genre.new(genre["name"])
+      genre_instance = Genre.new(genre['name'])
       genre_instances_list.push(genre_instance)
     end
   end
@@ -20,13 +20,13 @@ class GenreOptions
   def to_ruby_object(genre)
     {
       'id' => genre.id,
-      'name' => genre.name,
+      'name' => genre.name
     }
   end
 
   def list_genres
     puts "\n======================================================================".colorize(:light_red)
-    puts "\n🔥 Listing genres... 🖋️"
+    puts "\n🔥 Listing genres... 🖋️".colorize(:light_white)
     sleep(0.5)
     puts ''
     if @genre_ruby_objects.empty?
@@ -38,7 +38,7 @@ class GenreOptions
       puts "There are #{@genre_ruby_objects.length} genres:"
       puts ''
       @genre_ruby_objects.each_with_index do |genre, index|
-        puts "[#{index + 1}] #{genre['name']}"
+        puts "[#{index + 1}]".colorize(:light_red) + " #{genre['name']}"
       end
       puts ''
     end
@@ -48,16 +48,16 @@ class GenreOptions
   end
 
   def select_a_genre(item)
-    puts "\n🔥 Listing genres... 🖋️"
+    puts "\n🔥 Listing genres... 🖋️".colorize(:light_white)
     sleep(0.5)
-    puts "\nPlease, select a genre 📖: "
+    puts "\nPlease, select a genre 📖: ".colorize(:light_white)
     puts ''
     @genre_ruby_objects.each_with_index do |genre_hash, index|
       genre = Genre.new(genre_hash['name'])
-      puts "[#{index + 1}] #{genre.name}"
+      puts "[#{index + 1}]".colorize(:light_red) + " #{genre.name}"
     end
     puts ''
-    print 'Please, choose a genre by number: '
+    print 'Please, choose a genre by number: '.colorize(:light_white)
     genre_index = gets.chomp.to_i
     genre = Genre.new(@genre_ruby_objects[genre_index - 1]['name'])
     genre.add_item(item)
@@ -66,8 +66,8 @@ class GenreOptions
   def add_genre(item)
     puts "\nHow do you want to add a genre?"
     puts ''
-    puts '[1] Select from existing genres'
-    puts '[2] Create a new genre'
+    puts "#{'[1]'.colorize(:light_red)} Select from existing genres"
+    puts "#{'[2]'.colorize(:light_red)}Create a new genre"
     option = gets.chomp.to_i
 
     case option

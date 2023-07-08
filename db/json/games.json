@@ -1,0 +1,21 @@
+[
+  {
+    "id": 125,
+    "name": "League of legends",
+    "multiplayer": "false",
+    "publish_date": "2008-02-02",
+    "last_played_at": "2023-03-03",
+    "archived": false,
+    "author": {
+      "first_name": "Daniel",
+      "last_name": "Callman"
+    },
+    "label": {
+      "title": "Metal",
+      "color": "Blue"
+    },
+    "genre": {
+      "name": "Fantasy"
+    }
+  }
+]

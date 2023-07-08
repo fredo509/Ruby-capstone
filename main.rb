@@ -7,7 +7,6 @@ require_relative './src/options/author_options'
 require_relative './src/classes/storage'
 require 'colorize'
 
-
 class Main
   attr_accessor :items, :labels, :genre
 
@@ -23,7 +22,7 @@ class Main
     @book_options.book_ruby_objects = @storage.load_data('books')
     @music_options.music_ruby_objects = @storage.load_data('music')
     @author_options.author_ruby_objects = @storage.load_data('authors')
-    
+
     @author_options.fill_authors_instances_list
     @label_options.label_ruby_objects = @storage.load_data('labels')
     @genre_options.genre_ruby_objects = @storage.load_data('genre')
@@ -61,10 +60,9 @@ class Main
     puts "\nPlease choose an option from the list below:".colorize(:light_magenta)
     puts '-------------------------------------------'.colorize(:light_magenta)
     options_array.each_with_index do |option, index|
-      puts "#{[index + 1]}".colorize(:light_magenta) + " #{option}".colorize(:light_white)
-   
+      puts [index + 1].to_s.colorize(:light_magenta) + " #{option}".colorize(:light_white)
     end
-    puts "-------------------------------------------".colorize(:light_magenta)
+    puts '-------------------------------------------'.colorize(:light_magenta)
     option = get_user_input('Enter your choice: '.colorize(:light_magenta)).to_i
     select_option(option)
   end
@@ -76,7 +74,7 @@ class Main
       sleep(0.5)
       show_console_options
     when 2
-       @music_options.list_musics
+      @music_options.list_musics
       sleep(0.5)
       show_console_options
     when 3
