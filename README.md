@@ -81,7 +81,7 @@ This project involves creating a console application that allows users to keep t
 
 ## 🚀 Video Demo <a name="live-demo"></a>
 
-- [Video Presentation](https://drive.google.com/file/d/13-B45_cwSHZzMrKYeY-2BehYVFYm5_Jb/view?usp=sharing)
+- [Video Presentation]([https://drive.google.com/file/d/13-B45_cwSHZzMrKYeY-2BehYVFYm5_Jb/view?usp=sharing](https://drive.google.com/file/d/1SF1Gu6ZIyrdLGXMXFn6UKtLFpfNdF_yK/view?usp=drive_link))
 - If you  want to have a glimpse of our project, [here it is](./src//images/console_app.PNG)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
