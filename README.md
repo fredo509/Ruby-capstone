@@ -79,7 +79,7 @@ This project involves creating a console application that allows users to keep t
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Video Demo <a name="live-demo"></a>
 
 - [Video Presentation](https://drive.google.com/file/d/13-B45_cwSHZzMrKYeY-2BehYVFYm5_Jb/view?usp=sharing)
 - If you  want to have a glimpse of our project, [here it is](./src//images/console_app.PNG)
