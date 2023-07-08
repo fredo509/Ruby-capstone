@@ -158,7 +158,7 @@ You can deploy this project using:
 ## 👥 Authors <a name="authors"></a>
 
 👤 **Daniel Carrera**
-​
+
 - GitHub: [@carreraprogrammer](https://github.com/carreraprogrammer)
 - Twitter: [@carreraprogrammer](https://twitter.com/carreraprog)
 - LinkedIn: [Daniel Carrera] (https://www.linkedin.com/in/daniel-carrera-paz-85a917244/)
