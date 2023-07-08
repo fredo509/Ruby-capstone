@@ -79,10 +79,10 @@ This project involves creating a console application that allows users to keep t
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🚀 Video Demo <a name="live-demo"></a>
-
-- [Video Presentation]([https://drive.google.com/file/d/13-B45_cwSHZzMrKYeY-2BehYVFYm5_Jb/view?usp=sharing](https://drive.google.com/file/d/1SF1Gu6ZIyrdLGXMXFn6UKtLFpfNdF_yK/view?usp=drive_link))
-- If you  want to have a glimpse of our project, [here it is](./src//images/console_app.PNG)
+## 🚀 Live Demo <a name="live-demo"></a>
+- Live demo is not available.
+- [Video Presentation](https://drive.google.com/file/d/1axejWDHK84dKpfaZPVe4bJkz8nFqYIFs/view?usp=sharing)
+- If you  want to have a glimpse of our project, [here it is](src/images/catalog_of_my_things.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -158,7 +158,7 @@ You can deploy this project using:
 ## 👥 Authors <a name="authors"></a>
 
 👤 **Daniel Carrera**
-​
+
 - GitHub: [@carreraprogrammer](https://github.com/carreraprogrammer)
 - Twitter: [@carreraprogrammer](https://twitter.com/carreraprog)
 - LinkedIn: [Daniel Carrera] (https://www.linkedin.com/in/daniel-carrera-paz-85a917244/)

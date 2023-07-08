@@ -1,50 +1,38 @@
 [
   {
-    "id": 124,
-    "publisher": "MyBook",
-    "cover_state": "Salman",
-    "publish_date": "2020-01-01"
-  },
-  {
-    "id": 317,
-    "publisher": "The Dog",
-    "cover_state": "Daniel",
-    "publish_date": "2019-01-01"
-  },
-  {
-    "id": 953,
-    "publisher": "MyBook",
-    "cover_state": "Salman",
-    "publish_date": "2019-01-01"
-  },
-  {
-    "id": 152,
-    "publisher": "Failure",
-    "cover_state": "Istehsan",
-    "publish_date": "2023-01-01"
-  },
-  {
-    "id": 934,
-    "publisher": "Jadogar",
-    "cover_state": "Haroon",
-    "publish_date": "2018-03-03"
-  },
-  {
-    "id": 581,
+    "id": 216,
     "publisher": "Lord of the rings",
     "cover_state": "Daniel",
-    "publish_date": "2020-02-02"
+    "publish_date": "1965-01-01",
+    "archived": true,
+    "author": {
+      "first_name": "JRR Tolkien",
+      "last_name": "Tolkien"
+    },
+    "label": {
+      "title": "Book",
+      "color": "Red"
+    },
+    "genre": {
+      "name": "Fantasy"
+    }
   },
   {
-    "id": 169,
-    "publisher": "Lord of the rings",
-    "cover_state": "Daniel",
-    "publish_date": "2020-02-02"
-  },
-  {
-    "id": 26,
+    "id": 225,
     "publisher": "Power of now",
-    "cover_state": "daniel",
-    "publish_date": "2020-02-02"
+    "cover_state": "Eckhart Tolle",
+    "publish_date": "2002-02-20",
+    "archived": true,
+    "author": {
+      "first_name": "Eckhart",
+      "last_name": "Tolle"
+    },
+    "label": {
+      "title": "Book",
+      "color": "Blue"
+    },
+    "genre": {
+      "name": "Motivation"
+    }
   }
 ]

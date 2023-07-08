@@ -12,7 +12,7 @@ class AuthorOptions
     return unless author_ruby_objects.empty?
 
     @author_ruby_objects.each do |author|
-      author_instance = Author.new(author["first_name"], author["last_name"])
+      author_instance = Author.new(author['first_name'], author['last_name'])
       author_instances_list.push(author_instance)
     end
   end
@@ -26,58 +26,58 @@ class AuthorOptions
   end
 
   def list_authors
-    puts "\n======================================================================"
+    puts "\n======================================================================".colorize(:light_red)
     puts "\n🔥 Listing authors... 🖋️"
     sleep(0.5)
     puts ''
     if @author_ruby_objects.empty?
-      puts "\n======================================================================"
-      puts '||                                                                  ||'
+      puts "\n======================================================================".colorize(:light_red)
+      puts '||                                                                  ||'.colorize(:light_red)
       puts '||                        No authors found 😿                       ||'
-      puts '||                                                                  ||'
+      puts '||                                                                  ||'.colorize(:light_red)
     else
       puts "There are #{@author_ruby_objects.length} authors:"
       puts ''
       @author_ruby_objects.each_with_index do |author, index|
-        puts "[#{index + 1}] #{author['first_name']} #{author['last_name']}"
+        puts "[#{index + 1}]".colorize(:light_red) + " #{author['first_name']} #{author['last_name']}".colorize(:light_white)
       end
       puts ''
     end
-    puts '======================================================================'
+    puts '======================================================================'.colorize(:light_red)
     puts ''
     sleep(0.5)
   end
 
   def select_an_author(item)
-    puts "\n🔥 Listing authors... 🖋️"
+    puts "\n🔥 Listing authors... 🖋️".colorize(:light_white)
     sleep(0.5)
-    puts "\nPlease, select an author 📖: "
+    puts "\nPlease, select an author 📖: ".colorize(:light_white)
     puts ''
     @author_ruby_objects.each_with_index do |author, index|
-      puts "[#{index + 1}] #{author["first_name"]} #{author["last_name"]}"
+      puts "[#{index + 1}]".colorize(:light_red) + "#{author['first_name']} #{author['last_name']}"
     end
     puts ''
-    print 'Please, choose author by number: '
+    print 'Please, choose author by number: '.colorize(:light_white)
     author_index = gets.chomp.to_i
     author = Author.new(@author_ruby_objects[author_index - 1]['first_name'], @author_ruby_objects[author_index - 1]['last_name'])
     author.add_item(item)
   end
 
   def add_author(item)
-    puts "\nHow do you want to add an author?"
+    puts "\nHow do you want to add an author?".colorize(:light_white)
     puts ''
-    puts '[1] Select from existing authors'
-    puts '[2] Create a new author'
+    puts "#{'[1]'.colorize(:light_red)} Select from existing authors"
+    puts "#{'[2]'.colorize(:light_red)}Create a new author"
     option = gets.chomp.to_i
 
     case option
     when 1
       if @author_ruby_objects.empty?
-        puts "\n======================================================================"
-        puts '||                                                                  ||'
+        puts "\n======================================================================".colorize(:light_red)
+        puts '||                                                                  ||'.colorize(:light_red)
         puts '||               There are no authors to select from 😿             ||'
-        puts '||                                                                  ||'
-        puts '======================================================================'
+        puts '||                                                                  ||'.colorize(:light_red)
+        puts '======================================================================'.colorize(:light_red)
         sleep(0.5)
         add_author(item)
       else
