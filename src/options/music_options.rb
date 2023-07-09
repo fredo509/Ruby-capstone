@@ -48,7 +48,7 @@ class MusicOptions
         name = music['name']
         publish_date = music['publish_date']
 
-        puts "[ ♪ #{i}]".colorize(:light_red) + " ID: #{id} - Music name: #{name} - Is on spotify ? : #{on_spotify} 
+        puts "[ ♪ #{i}]".colorize(:light_red) + " ID: #{id} - Music name: #{name} - Is on spotify ? : #{on_spotify}
         - Publish Date: #{publish_date}".colorize(:light_white)
       end
       puts "\n♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪".colorize(:light_red)
