@@ -1,4 +1,5 @@
 require_relative '../classes/genre'
+require_relative '../classes/convert_to_object'
 
 class GenreOptions
   attr_accessor :genre_ruby_objects, :genres_instances_list
@@ -15,13 +16,6 @@ class GenreOptions
       genre_instance = Genre.new(genre['name'])
       genre_instances_list.push(genre_instance)
     end
-  end
-
-  def to_ruby_object(genre)
-    {
-      'id' => genre.id,
-      'name' => genre.name
-    }
   end
 
   def list_genres
@@ -89,7 +83,7 @@ class GenreOptions
       name = gets.chomp
       genre = Genre.new(name)
       @genres_instances_list << genre
-      @genre_ruby_objects << to_ruby_object(genre)
+      @genre_ruby_objects << ConvertToObject.instance_to_object(genre)
       genre.add_item(item)
     end
   end

@@ -1,4 +1,5 @@
 require_relative '../classes/label'
+require_relative '../classes/convert_to_object'
 
 class LabelOptions
   attr_accessor :label_ruby_objects, :labels_instances_list
@@ -15,14 +16,6 @@ class LabelOptions
       label_instance = Label.new(label['title'], label['color'])
       label_instances_list.push(label_instance)
     end
-  end
-
-  def to_ruby_object(label)
-    {
-      'id' => label.id,
-      'title' => label.title,
-      'color' => label.color
-    }
   end
 
   def list_labels
@@ -92,7 +85,7 @@ class LabelOptions
       color = gets.chomp
       label = Label.new(title, color)
       @labels_instances_list << label
-      @label_ruby_objects << to_ruby_object(label)
+      @label_ruby_objects << ConvertToObject.instance_to_object(label)
       label.add_item(item)
     end
   end

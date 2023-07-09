@@ -1,6 +1,7 @@
 require_relative '../classes/book'
 require_relative 'label_options'
 require_relative 'author_options'
+require_relative '../classes/convert_to_object'
 
 class BookOptions
   attr_accessor :book_instances, :book_ruby_objects
@@ -8,27 +9,6 @@ class BookOptions
   def initialize
     @book_instances = []
     @book_ruby_objects = []
-  end
-
-  def to_ruby_object(book)
-    {
-      'id' => book.id,
-      'publisher' => book.publisher,
-      'cover_state' => book.cover_state,
-      'publish_date' => book.publish_date,
-      'archived' => book.archived,
-      'author' => {
-        'first_name' => book.author.first_name,
-        'last_name' => book.author.last_name
-      },
-      'label' => {
-        'title' => book.label.title,
-        'color' => book.label.color
-      },
-      'genre' => {
-        'name' => book.genre.name
-      }
-    }
   end
 
   def list_books
@@ -49,7 +29,7 @@ class BookOptions
         cover_state = book['cover_state']
         publish_date = book['publish_date']
 
-        puts "[#{i}]".colorize(:light_red) + " ID: #{id} - Publisher: #{publisher} - Cover State: #{cover_state} 
+        puts "[#{i}]".colorize(:light_red) + " ID: #{id} - Publisher: #{publisher} - Cover State: #{cover_state}
         - Publish Date: #{publish_date}".colorize(:light_white)
       end
       puts "\n======================================================================".colorize(:light_red)
@@ -73,7 +53,7 @@ class BookOptions
     genre_options.add_genre(new_book)
     label_options.add_label(new_book)
     author_options.add_author(new_book)
-    @book_ruby_objects.push(to_ruby_object(new_book))
+    @book_ruby_objects.push(ConvertToObject.instance_to_object(new_book))
     sleep(0.3)
     puts "\n======================================================================".colorize(:light_red)
     puts '||                                                                  ||'.colorize(:light_red)

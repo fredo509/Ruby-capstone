@@ -1,4 +1,5 @@
 require_relative '../classes/author'
+require_relative '../classes/convert_to_object'
 
 class AuthorOptions
   attr_accessor :author_ruby_objects, :authors_instances_list
@@ -15,14 +16,6 @@ class AuthorOptions
       author_instance = Author.new(author['first_name'], author['last_name'])
       author_instances_list.push(author_instance)
     end
-  end
-
-  def to_ruby_object(author)
-    {
-      'id' => author.id,
-      'first_name' => author.first_name,
-      'last_name' => author.last_name
-    }
   end
 
   def list_authors
@@ -91,7 +84,7 @@ class AuthorOptions
       last_name = gets.chomp
       author = Author.new(first_name, last_name)
       @authors_instances_list << author
-      @author_ruby_objects << to_ruby_object(author)
+      @author_ruby_objects << ConvertToObject.instance_to_object(author)
       author.add_item(item)
     end
   end
