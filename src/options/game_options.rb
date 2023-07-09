@@ -1,6 +1,7 @@
 require_relative '../classes/game'
 require_relative 'author_options'
 require_relative 'label_options'
+require_relative '../classes/convert_to_object'
 
 class GameOptions
   attr_accessor :game_instances, :game_ruby_objects
@@ -8,28 +9,6 @@ class GameOptions
   def initialize
     @game_instances = []
     @game_ruby_objects = []
-  end
-
-  def to_ruby_object(game)
-    {
-      'id' => game.id,
-      'name' => game.game_name,
-      'multiplayer' => game.multiplayer,
-      'publish_date' => game.publish_date,
-      'last_played_at' => game.last_played_at,
-      'archived' => game.archived,
-      'author' => {
-        'first_name' => game.author.first_name,
-        'last_name' => game.author.last_name
-      },
-      'label' => {
-        'title' => game.label.title,
-        'color' => game.label.color
-      },
-      'genre' => {
-        'name' => game.genre.name
-      }
-    }
   end
 
   def list_games
@@ -71,7 +50,7 @@ class GameOptions
     genre_options.add_genre(new_game)
     author_options.add_author(new_game)
     label_options.add_label(new_game)
-    @game_ruby_objects.push(to_ruby_object(new_game))
+    @game_ruby_objects.push(ConvertToObject.instance_to_object(new_game))
     sleep(0.3)
 
     puts "\n======================================================================".colorize(:light_red)

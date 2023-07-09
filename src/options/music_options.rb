@@ -1,6 +1,7 @@
 require_relative '../classes/music_album'
 require_relative './genre_options'
 require_relative './author_options'
+require_relative '../classes/convert_to_object'
 
 class MusicOptions
   attr_accessor :music_instances, :music_ruby_objects
@@ -8,26 +9,6 @@ class MusicOptions
   def initialize
     @music_instances = []
     @music_ruby_objects = []
-  end
-
-  def to_ruby_object(music)
-    {
-      'id' => music.id,
-      'on_spotify' => music.on_spotify,
-      'publish_date' => music.publish_date,
-      'archived' => music.archived,
-      'author' => {
-        'first_name' => music.author.first_name,
-        'last_name' => music.author.last_name
-      },
-      'label' => {
-        'title' => music.label.title,
-        'color' => music.label.color
-      },
-      'genre' => {
-        'name' => music.genre.name
-      }
-    }
   end
 
   def list_musics
@@ -73,7 +54,7 @@ class MusicOptions
     genre_options.add_genre(new_music)
     author_options.add_author(new_music)
     label_options.add_label(new_music)
-    @music_ruby_objects.push(to_ruby_object(new_music))
+    @music_ruby_objects.push(ConvertToObject.instance_to_object(new_music))
     sleep(0.3)
     puts "\n======================================================================".colorize(:light_red)
     puts '||                                                                  ||'.colorize(:light_red)
